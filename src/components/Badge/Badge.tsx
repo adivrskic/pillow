@@ -10,9 +10,9 @@ const Badge = ({ label, variant }: BadgeProps) => {
   let badgeVariant;
 
   if (variant === "flat") {
-    badgeVariant = "pillow-alert--flat";
+    badgeVariant = "pillow-badge--flat";
   } else if (variant === "pressed") {
-    badgeVariant = "pillow-alert--pressed";
+    badgeVariant = "pillow-badge--pressed";
   } else {
     badgeVariant = "";
   }
