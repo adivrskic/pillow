@@ -14,6 +14,6 @@ const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
 export const BadgeComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BadgeComponent.args = {
-  content: "9+",
+  label: "9+",
   variant: "flat",
 };

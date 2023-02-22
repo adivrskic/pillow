@@ -11,4 +11,5 @@ module.exports = {
     builder: "@storybook/builder-webpack5",
   },
   typescript: { reactDocgen: false },
+  staticDirs: ["../public"],
 };
