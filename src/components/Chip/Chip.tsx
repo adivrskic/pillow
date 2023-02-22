@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Chip.scss";
 
 export interface ChipProps {
-  deletable: boolean;
-  icon: React.ReactNode | null;
+  deletable: boolean | null;
+  icon: React.ReactNode;
   label: string;
   variant: string;
 }
@@ -20,6 +20,8 @@ const Chip = ({ deletable, icon, label, variant }: ChipProps) => {
   } else {
     chipVariant = "";
   }
+
+  if (deleted) return null;
 
   return (
     !deleted && (
