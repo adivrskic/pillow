@@ -3,6 +3,7 @@ $bg: #f2f3f7;
 
 .pillow-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 100%;
   padding: 20px;
