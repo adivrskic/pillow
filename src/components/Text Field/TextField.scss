@@ -1,0 +1,36 @@
+$color: #444;
+$bg: #f2f3f7;
+
+.pillow-textfield {
+  display: inline-flex;
+  flex-direction: column;
+  border-radius: 3px;
+  padding: 20px;
+
+  &--flat {
+    box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
+  }
+
+  &--pressed {
+    box-shadow: inset 5px 5px 10px #e6e7eb, inset -5px -5px 10px #feffff;
+  }
+
+  &__title {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+  }
+
+  &__textarea {
+    background: $bg;
+    border: none;
+    padding: 10px;
+  }
+}
+
+.pillow-textfield .pillow-textfield__textarea.pillow-textfield--flat {
+  box-shadow: inset 5px 5px 10px #e6e7eb, inset -5px -5px 10px #feffff;
+}
+
+.pillow-textfield .pillow-textfield__textarea.pillow-textfield--pressed {
+  box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
+}

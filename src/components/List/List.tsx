@@ -4,28 +4,33 @@ import "./List.scss";
 export interface ListProps {
   header: string;
   label: string;
-  listItems: [];
+  listItems: React.ReactNode[];
   variant: string;
 }
 
 const List = ({ header, label, listItems, variant }: ListProps) => {
-  let listItemVariant;
+  let listItemVariant: string;
 
   if (variant === "flat") {
-    listItemVariant = "pillow-chip--flat";
+    listItemVariant = "pillow-list__list-item--flat";
   } else if (variant === "pressed") {
-    listItemVariant = "pillow-chip--pressed";
+    listItemVariant = "pillow-list__list-item--pressed";
   } else {
     listItemVariant = "";
   }
 
   return (
     <div className={`pillow-list`}>
-      <h2>{header}</h2>
-      <p>{label}</p>
-      <ul>
+      <h2 className="pillow-list__header">{header}</h2>
+      <p className="pillow-list__label">{label}</p>
+      <ul className="pillow-list__list">
         {listItems.map((item, index) => (
-          <li>{item}</li>
+          <li
+            key={index}
+            className={`pillow-list__list-item ${listItemVariant}`}
+          >
+            {item}
+          </li>
         ))}
       </ul>
     </div>

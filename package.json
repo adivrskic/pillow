@@ -1,6 +1,6 @@
 {
   "name": "@adivrskic/pillow",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Neumorphic design UI components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
