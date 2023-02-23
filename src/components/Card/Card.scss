@@ -15,8 +15,10 @@ $bg: #f2f3f7;
     display: inline-block;
     border-radius: 3px;
     width: 100%;
-    height: 200px;
+    max-height: 200px;
+    height: fit-content;
     background-color: $color;
+    object-fit: contain;
   }
 
   h2 {
