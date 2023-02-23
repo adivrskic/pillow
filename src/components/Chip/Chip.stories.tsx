@@ -14,7 +14,6 @@ const Template: ComponentStory<typeof Chip> = (args) => <Chip {...args} />;
 export const ChipComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ChipComponent.args = {
-  deletable: true,
   icon: null,
   label: "Chip Example",
   variant: "flat",
