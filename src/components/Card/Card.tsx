@@ -15,7 +15,7 @@ const Card = ({ heading, imageAlt, imageSrc, text, variant }: CardProps) => {
   if (variant === "flat") {
     cardVariant = "pillow-card--flat";
   } else if (variant === "pressed") {
-    cardVariant = "pillow-card--concave";
+    cardVariant = "pillow-card--pressed";
   } else {
     cardVariant = "";
   }
