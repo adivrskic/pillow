@@ -3,12 +3,12 @@ $bg: #f2f3f7;
 
 .pillow-btn {
   border: none;
-  border-radius: 0.33rem;
+  border-radius: 3px;
   background-color: $bg;
   cursor: pointer;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.7px;
   color: $color;
-  padding: 0.75rem 1.25rem;
+  padding: 10px;
   font-weight: 700;
   text-align: center;
   transition: all 0.15s ease-in-out;
@@ -18,39 +18,26 @@ $bg: #f2f3f7;
   display: inline-block;
 
   &--small {
-    font-size: 0.75rem;
-    padding: 0.75rem 1.25rem;
+    font-size: 12px;
+    padding: 10px;
   }
 
   &--medium {
-    font-size: 0.9rem;
-    padding: 0.875rem 1.5rem;
+    font-size: 16px;
+    padding: 10px 15px;
   }
 
   &--large {
-    font-size: 1.3rem;
-    padding: 1rem 1.75rem;
+    font-size: 20px;
+    padding: 10px 20px;
   }
 
   &--flat {
-    box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
+    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
   }
 
-  &--convex {
-    background: linear-gradient(145deg, #dadbde, #ffffff);
-    box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
-  }
-
-  &--concave {
-    background: linear-gradient(145deg, #ffffff, #dadbde);
-    box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
-  }
-
-  &--pressed {
-    box-shadow: inset 5px 5px 10px #e6e7eb, inset -5px -5px 10px #feffff;
-  }
-
+  &--pressed,
   &:active {
-    box-shadow: inset 5px 5px 10px #e6e7eb, inset -5px -5px 10px #feffff;
+    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
   }
 }

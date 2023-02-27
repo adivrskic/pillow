@@ -3,35 +3,35 @@ $bg: #f2f3f7;
 
 .pillow-alert {
   display: inline-flex;
-  align-items: center;
-  border-radius: 0.33rem;
+  align-items: flex-start;
+  border-radius: 3px;
   background-color: $bg;
   cursor: pointer;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.7px;
   color: $color;
-  padding: 0.75rem 1.25rem;
+  padding: 10px;
 
   &__heading {
     font-weight: 700;
   }
 
   svg {
-    width: 26px;
-    height: 26px;
+    min-width: 26px;
+    min-height: 26px;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 1rem;
+    padding: 0 0 0 10px;
   }
 
   &--flat {
-    box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
+    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
   }
 
   &--pressed {
-    box-shadow: inset 5px 5px 10px #e6e7eb, inset -5px -5px 10px #feffff;
+    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
   }
 }

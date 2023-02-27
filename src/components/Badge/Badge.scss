@@ -4,21 +4,23 @@ $bg: #f2f3f7;
 .pillow-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   border-radius: 50%;
   background-color: $bg;
   color: $color;
   text-align: center;
-  padding: 0.5rem;
-  font-size: 12px;
+  padding: 10px;
+  font-size: 16px;
   font-weight: 700;
-  width: 15px;
-  height: 15px;
+  width: 26px;
+  height: 26px;
+  overflow: hidden;
 
   &--flat {
-    box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
+    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
   }
 
   &--pressed {
-    box-shadow: inset 5px 5px 10px #e6e7eb, inset -5px -5px 10px #feffff;
+    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
   }
 }

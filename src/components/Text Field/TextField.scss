@@ -8,11 +8,11 @@ $bg: #f2f3f7;
   padding: 20px;
 
   &--flat {
-    box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
+    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
   }
 
   &--pressed {
-    box-shadow: inset 5px 5px 10px #e6e7eb, inset -5px -5px 10px #feffff;
+    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
   }
 
   &__title {
@@ -24,13 +24,14 @@ $bg: #f2f3f7;
     background: $bg;
     border: none;
     padding: 10px;
+    min-width: 200px;
   }
 }
 
 .pillow-textfield .pillow-textfield__textarea.pillow-textfield--flat {
-  box-shadow: inset 5px 5px 10px #e6e7eb, inset -5px -5px 10px #feffff;
+  box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
 }
 
 .pillow-textfield .pillow-textfield__textarea.pillow-textfield--pressed {
-  box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
+  box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
 }

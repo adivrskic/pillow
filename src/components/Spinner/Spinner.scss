@@ -8,11 +8,11 @@ $bg: #f2f3f7;
   border-radius: 9999px;
 
   &--flat {
-    box-shadow: 5px 5px 10px #e6e7eb, -5px -5px 10px #feffff;
+    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
   }
 
   &--pressed {
-    box-shadow: inset 5px 5px 10px #e6e7eb, inset -5px -5px 10px #feffff;
+    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
   }
 
   &__spinner,
@@ -34,12 +34,12 @@ $bg: #f2f3f7;
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
-    -webkit-animation: load8 0.6s infinite linear;
-    animation: load8 0.6s infinite linear;
+    -webkit-animation: spin 0.6s infinite linear;
+    animation: spin 0.6s infinite linear;
   }
 }
 
-@-webkit-keyframes load8 {
+@-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -49,7 +49,7 @@ $bg: #f2f3f7;
     transform: rotate(360deg);
   }
 }
-@keyframes load8 {
+@keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
