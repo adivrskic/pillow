@@ -22,6 +22,8 @@ $bg: #f2f3f7;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    width: fit-content;
+    min-width: 250px;
   }
 
   &__list-item {
