@@ -1,37 +1,50 @@
-$color: #444;
-$bg: #f2f3f7;
+@import "../../global.scss";
 
 .pillow-textfield {
   display: inline-flex;
   flex-direction: column;
-  border-radius: 3px;
-  padding: 20px;
+  border-radius: $border-radius;
+  padding: $padding-regular;
 
   &--flat {
-    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
+    @include box-shadow(
+      "",
+      var(--textfield-top-shadow-color),
+      var(--textfield-bottom-shadow-color)
+    );
   }
 
   &--pressed {
-    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
+    @include box-shadow(
+      "inset",
+      var(--textfield-top-shadow-color),
+      var(--textfield-bottom-shadow-color)
+    );
   }
 
   &__title {
-    font-size: 20px;
-    margin: 0 0 20px 0;
+    margin: 0 0 $padding-regular 0;
   }
 
   &__textarea {
-    background: $bg;
-    border: none;
-    padding: 10px;
+    background: var(--textfield-bg-color);
+    padding: $padding-regular;
     min-width: 200px;
   }
 }
 
 .pillow-textfield .pillow-textfield__textarea.pillow-textfield--flat {
-  box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
+  @include box-shadow(
+    "inset",
+    var(--textfield-top-shadow-color),
+    var(--textfield-bottom-shadow-color)
+  );
 }
 
 .pillow-textfield .pillow-textfield__textarea.pillow-textfield--pressed {
-  box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
+  @include box-shadow(
+    "",
+    var(--textfield-top-shadow-color),
+    var(--textfield-bottom-shadow-color)
+  );
 }

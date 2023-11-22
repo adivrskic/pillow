@@ -20,4 +20,6 @@ TextFieldComponent.args = {
   content: "",
   onTextChange: () => console.log("change"),
   variant: "flat",
+  bgColor: "#f2f3f7",
+  textColor: "#323232",
 };

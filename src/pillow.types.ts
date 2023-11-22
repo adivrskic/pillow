@@ -26,3 +26,52 @@ export interface ButtonProps {
   bgColor: string;
   textColor: string;
 }
+
+export interface CardProps {
+  heading: string;
+  imageAlt: string;
+  imageSrc: string;
+  text: string;
+  variant: string;
+  bgColor: string;
+  textColor: string;
+}
+
+export interface ChipProps {
+  icon: string;
+  label: string;
+  variant: string;
+  bgColor: string;
+  textColor: string;
+}
+
+export interface ContainerProps {
+  children: React.ReactNode;
+  variant: string;
+  bgColor: string;
+  textColor: string;
+}
+
+export interface ListProps {
+  header: string;
+  label: string;
+  listItems: React.ReactNode[];
+  variant: string;
+  bgColor: string;
+  textColor: string;
+}
+
+export interface SpinnerProps {
+  complete: boolean;
+  variant: string;
+  bgColor: string;
+}
+
+export interface TextFieldProps {
+  title: string;
+  content: string;
+  onTextChange: () => void;
+  variant: string;
+  bgColor: string;
+  textColor: string;
+}

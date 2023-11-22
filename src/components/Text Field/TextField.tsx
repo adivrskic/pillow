@@ -1,34 +1,34 @@
 import React from "react";
+import { getColor } from "../../helpers";
+import { luminosity } from "../../constants";
+import { TextFieldProps } from "../../pillow.types";
 import "./TextField.scss";
-
-export interface TextFieldProps {
-  title: string;
-  content: string;
-  onTextChange: () => void;
-  variant: string;
-}
 
 const TextField = ({
   title,
   content,
   onTextChange,
   variant,
+  bgColor,
+  textColor,
 }: TextFieldProps) => {
-  let textFieldVariant;
-
-  if (variant === "flat") {
-    textFieldVariant = "pillow-textfield--flat";
-  } else if (variant === "pressed") {
-    textFieldVariant = "pillow-textfield--pressed";
-  } else {
-    textFieldVariant = "";
-  }
-
+  const topShadowColor = getColor(bgColor, -luminosity);
+  const bottomShadowColor = getColor(bgColor, luminosity);
+  const style = {
+    ["--textfield-bg-color" as string]: `${bgColor}`,
+    ["--textfield-text-color" as string]: `${textColor}`,
+    ["--textfield-top-shadow-color" as string]: `${topShadowColor}`,
+    ["--textfield-bottom-shadow-color" as string]: `${bottomShadowColor}`,
+  };
   return (
-    <div className={`pillow-textfield ${textFieldVariant}`}>
+    <div
+      style={style}
+      className={`pillow-textfield pillow-textfield--${variant}`}
+    >
       <h2 className="pillow-textfield__title">{title}</h2>
       <textarea
-        className={`pillow-textfield__textarea ${textFieldVariant}`}
+        style={style}
+        className={`pillow-textfield__textarea pillow-textfield--${variant}`}
         onChange={(e) => onTextChange}
       >
         {content}

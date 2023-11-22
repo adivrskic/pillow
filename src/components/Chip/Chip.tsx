@@ -1,26 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
+import {
+  IoCheckmarkCircleOutline,
+  IoInformationCircleOutline,
+  IoWarningOutline,
+} from "react-icons/io5";
+import { getColor } from "../../helpers";
+import { luminosity } from "../../constants";
+import { ChipProps } from "../../pillow.types";
 import "./Chip.scss";
 
-export interface ChipProps {
-  icon: React.ReactNode;
-  label: string;
-  variant: string;
-}
+const Chip = ({ icon, label, variant, bgColor, textColor }: ChipProps) => {
+  const topShadowColor = getColor(bgColor, -luminosity);
+  const bottomShadowColor = getColor(bgColor, luminosity);
+  let chipIcon;
 
-const Chip = ({ icon, label, variant }: ChipProps) => {
-  let chipVariant;
-
-  if (variant === "flat") {
-    chipVariant = "pillow-chip--flat";
-  } else if (variant === "pressed") {
-    chipVariant = "pillow-chip--pressed";
+  if (icon === "error") {
+    chipIcon = <IoWarningOutline />;
+  } else if (icon === "warning") {
+    chipIcon = <IoWarningOutline />;
+  } else if (icon === "info") {
+    chipIcon = <IoInformationCircleOutline />;
+  } else if (icon === "success") {
+    chipIcon = <IoCheckmarkCircleOutline />;
   } else {
-    chipVariant = "";
+    chipIcon = null;
   }
 
   return (
-    <div className={`pillow-chip ${chipVariant}`}>
-      {icon && icon}
+    <div
+      style={{
+        ["--chip-bg-color" as string]: `${bgColor}`,
+        ["--chip-text-color" as string]: `${textColor}`,
+        ["--chip-top-shadow-color" as string]: `${topShadowColor}`,
+        ["--chip-bottom-shadow-color" as string]: `${bottomShadowColor}`,
+      }}
+      className={`pillow-chip pillow-chip--${variant}`}
+    >
+      {icon && chipIcon}
       {label}
     </div>
   );

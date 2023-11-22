@@ -1,32 +1,37 @@
-$color: #444;
-$bg: #f2f3f7;
+@import "../../global.scss";
 
 .pillow-spinner {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius: 9999px;
-  width: 40px;
-  height: 40px;
+  border-radius: $border-radius-max;
+  width: 4rem;
+  height: 4rem;
 
   &--flat {
-    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
+    @include box-shadow(
+      "",
+      var(--spinner-top-shadow-color),
+      var(--spinner-bottom-shadow-color)
+    );
   }
 
   &--pressed {
-    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
+    @include box-shadow(
+      "inset",
+      var(--spinner-top-shadow-color),
+      var(--spinner-bottom-shadow-color)
+    );
   }
 
   &__spinner,
   &__spinner:after {
-    border-radius: 50%;
-    width: 10em;
-    height: 10em;
+    border-radius: $border-radius-max;
+    width: 75%;
+    height: 75%;
   }
 
   &__spinner {
-    // padding: 10px auto;
-    font-size: 4px;
     position: relative;
     text-indent: -9999em;
     border-top: 8px solid rgba(255, 255, 255, 0.25);

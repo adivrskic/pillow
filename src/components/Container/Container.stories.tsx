@@ -22,4 +22,6 @@ ContainerComponent.args = {
     </div>
   ),
   variant: "flat",
+  bgColor: "#f2f3f7",
+  textColor: "#323232",
 };

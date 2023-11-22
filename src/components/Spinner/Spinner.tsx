@@ -1,30 +1,25 @@
 import React from "react";
+import { getColor } from "../../helpers";
+import { luminosity } from "../../constants";
+import { SpinnerProps } from "../../pillow.types";
 import "./Spinner.scss";
 
-export interface SpinnerProps {
-  complete: boolean;
-  variant: string;
-}
-
-const Spinner = ({ complete, variant }: SpinnerProps) => {
+const Spinner = ({ complete, variant, bgColor }: SpinnerProps) => {
   if (complete) return null;
-
-  let spinnerVariant;
-
-  if (variant === "flat") {
-    spinnerVariant = "pillow-spinner--flat";
-  } else if (variant === "pressed") {
-    spinnerVariant = "pillow-spinner--pressed";
-  } else {
-    spinnerVariant = "";
-  }
+  const topShadowColor = getColor(bgColor, -luminosity);
+  const bottomShadowColor = getColor(bgColor, luminosity);
 
   return (
-    !complete && (
-      <div className={`pillow-spinner ${spinnerVariant}`}>
-        <div className="pillow-spinner__spinner"></div>
-      </div>
-    )
+    <div
+      style={{
+        ["--spinner-bg-color" as string]: `${bgColor}`,
+        ["--spinner-top-shadow-color" as string]: `${topShadowColor}`,
+        ["--spinner-bottom-shadow-color" as string]: `${bottomShadowColor}`,
+      }}
+      className={`pillow-spinner pillow-spinner--${variant}`}
+    >
+      <div className="pillow-spinner__spinner"></div>
+    </div>
   );
 };
 

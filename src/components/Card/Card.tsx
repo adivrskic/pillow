@@ -1,28 +1,32 @@
 import React from "react";
+import { getColor } from "../../helpers";
+import { luminosity } from "../../constants";
+import { CardProps } from "../../pillow.types";
 import "./Card.scss";
 
-export interface CardProps {
-  heading: string;
-  imageAlt: string;
-  imageSrc: string;
-  text: string;
-  variant: string;
-}
-
-const Card = ({ heading, imageAlt, imageSrc, text, variant }: CardProps) => {
-  let cardVariant;
-
-  if (variant === "flat") {
-    cardVariant = "pillow-card--flat";
-  } else if (variant === "pressed") {
-    cardVariant = "pillow-card--pressed";
-  } else {
-    cardVariant = "";
-  }
+const Card = ({
+  heading,
+  imageAlt,
+  imageSrc,
+  text,
+  variant,
+  bgColor,
+  textColor,
+}: CardProps) => {
+  const topShadowColor = getColor(bgColor, -luminosity);
+  const bottomShadowColor = getColor(bgColor, luminosity);
 
   return (
-    <div className={`pillow-card ${cardVariant}`}>
-      {imageSrc && (
+    <div
+      style={{
+        ["--card-bg-color" as string]: `${bgColor}`,
+        ["--card-text-color" as string]: `${textColor}`,
+        ["--card-top-shadow-color" as string]: `${topShadowColor}`,
+        ["--card-bottom-shadow-color" as string]: `${bottomShadowColor}`,
+      }}
+      className={`pillow-card pillow-card--${variant}`}
+    >
+      {imageSrc !== "" && (
         <img className="pillow-card__image" src={imageSrc} alt={imageAlt} />
       )}
       <h2 className="pillow-card__heading">{heading}</h2>
