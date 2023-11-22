@@ -1,0 +1,38 @@
+// General Global Styles
+$border-radius: 0.5rem;
+$padding-regular: 0.75rem;
+$letter-spacing: 0.05rem;
+$icon-size-regular: 1.5rem;
+
+// Box Shadows
+@mixin box-shadow($inset, $top-shadow-color, $bottom-shadow-color) {
+  @if $inset == "inset" {
+    -webkit-box-shadow: inset 8px 8px 18px $top-shadow-color,
+      inset -8px -8px 18px $bottom-shadow-color;
+    -moz-box-shadow: inset 8px 8px 18px $top-shadow-color,
+      inset -8px -8px 18px $bottom-shadow-color;
+    box-shadow: inset 8px 8px 18px $top-shadow-color,
+      inset -8px -8px 18px $bottom-shadow-color;
+  } @else {
+    -webkit-box-shadow: 2px 4px 10px $top-shadow-color,
+      -4px -8px 10px $bottom-shadow-color;
+    -moz-box-shadow: 2px 4px 10px $top-shadow-color,
+      -4px -8px 10px $bottom-shadow-color;
+    box-shadow: 2px 4px 10px $top-shadow-color,
+      -4px -8px 10px $bottom-shadow-color;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}

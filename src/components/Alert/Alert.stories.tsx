@@ -18,4 +18,6 @@ AlertComponent.args = {
   label: "This is an example of a success alert",
   variant: "flat",
   severity: "success",
+  bgColor: "#963a3a",
+  textColor: "#fff",
 };

@@ -1,37 +1,40 @@
-$color: #444;
-$bg: #f2f3f7;
+@import "../../global.scss";
 
 .pillow-alert {
   display: inline-flex;
   align-items: flex-start;
-  border-radius: 3px;
-  background-color: $bg;
+  border-radius: $border-radius;
+  background-color: var(--alert-bg-color);
   cursor: pointer;
-  letter-spacing: 0.7px;
-  color: $color;
-  padding: 10px;
-
-  &__heading {
-    font-weight: 700;
-  }
+  letter-spacing: $letter-spacing;
+  color: var(--alert-text-color);
+  padding: $padding-regular;
 
   svg {
-    min-width: 26px;
-    min-height: 26px;
+    min-width: $icon-size-regular;
+    min-height: $icon-size-regular;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 0 0 10px;
+    padding: 0 0 0 $padding-regular;
   }
 
   &--flat {
-    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
+    @include box-shadow(
+      "",
+      var(--alert-top-shadow-color),
+      var(--alert-bottom-shadow-color)
+    );
   }
 
   &--pressed {
-    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
+    @include box-shadow(
+      "inset",
+      var(--alert-top-shadow-color),
+      var(--alert-bottom-shadow-color)
+    );
   }
 }
