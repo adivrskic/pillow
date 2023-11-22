@@ -1,8 +1,22 @@
 // General Global Styles
 $border-radius: 0.5rem;
+$border-radius-max: 999rem;
+
+$padding-small: 0.5rem;
 $padding-regular: 0.75rem;
+$padding-large: 1rem;
+
 $letter-spacing: 0.05rem;
+
+$icon-size-small: 1rem;
 $icon-size-regular: 1.5rem;
+$icon-size-large: 2rem;
+
+$font-size-small: 0.75rem;
+$font-size-regular: 1rem;
+$font-size-large: 1.25rem;
+
+$transition-regular: all 0.2s ease-in-out;
 
 // Box Shadows
 @mixin box-shadow($inset, $top-shadow-color, $bottom-shadow-color) {
@@ -35,4 +49,19 @@ h6 {
 
 p {
   margin: 0;
+}
+
+button,
+a {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
 }

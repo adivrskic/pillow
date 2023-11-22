@@ -17,7 +17,10 @@ ButtonComponent.args = {
   label: "Click Me",
   variant: "flat",
   size: "small",
+  icon: "",
   role: "button",
   href: "",
   disabled: false,
+  bgColor: "#f2f3f7",
+  textColor: "#323232",
 };

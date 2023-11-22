@@ -1,16 +1,13 @@
 import React from "react";
+import {
+  IoCheckmarkCircleOutline,
+  IoInformationCircleOutline,
+  IoWarningOutline,
+} from "react-icons/io5";
+import { getColor } from "../../helpers";
+import { luminosity } from "../../constants";
+import { ButtonProps } from "../../pillow.types";
 import "./Button.scss";
-
-export interface ButtonProps {
-  disabled: boolean;
-  href: string;
-  icon: React.ReactNode;
-  label: string;
-  onClick: () => void;
-  role: string;
-  size: string;
-  variant: string;
-}
 
 const Button = ({
   disabled,
@@ -21,50 +18,48 @@ const Button = ({
   role,
   size,
   variant,
+  bgColor,
+  textColor,
 }: ButtonProps) => {
-  let btnVariant;
+  const topShadowColor = getColor(bgColor, -luminosity);
+  const bottomShadowColor = getColor(bgColor, luminosity);
+  let buttonIcon;
 
-  if (variant === "flat") {
-    btnVariant = "pillow-btn--flat";
-  } else if (variant === "concave") {
-    btnVariant = "pillow-btn--concave";
-  } else if (variant === "convex") {
-    btnVariant = "pillow-btn--convex";
-  } else if (variant === "pressed") {
-    btnVariant = "pillow-btn--pressed";
+  if (icon === "error") {
+    buttonIcon = <IoWarningOutline />;
+  } else if (icon === "warning") {
+    buttonIcon = <IoWarningOutline />;
+  } else if (icon === "info") {
+    buttonIcon = <IoInformationCircleOutline />;
+  } else if (icon === "success") {
+    buttonIcon = <IoCheckmarkCircleOutline />;
   } else {
-    btnVariant = "";
+    buttonIcon = null;
   }
-
-  let btnSize;
-  if (size === "small") {
-    btnSize = "pillow-btn--small";
-  } else if (size === "medium") {
-    btnSize = "pillow-btn--medium";
-  } else if (size === "large") {
-    btnSize = "pillow-btn--large";
-  } else {
-    btnSize = "";
-  }
-
   return href ? (
     <a
       role={role}
-      className={`pillow-btn ${btnVariant} ${btnSize}`}
+      className={`pillow-btn pillow-btn--${variant} pillow-btn--${size}`}
       onClick={() => onClick}
       href={href}
     >
-      {icon && <span></span>}
+      {icon && buttonIcon}
       {label}
     </a>
   ) : (
     <button
+      style={{
+        ["--btn-bg-color" as string]: `${bgColor}`,
+        ["--btn-text-color" as string]: `${textColor}`,
+        ["--btn-top-shadow-color" as string]: `${topShadowColor}`,
+        ["--btn-bottom-shadow-color" as string]: `${bottomShadowColor}`,
+      }}
       role={role}
-      className={`pillow-btn ${btnVariant} ${btnSize}`}
+      className={`pillow-btn pillow-btn--${variant} pillow-btn--${size}`}
       disabled={disabled}
       onClick={() => onClick}
     >
-      {icon && <span></span>}
+      {icon && buttonIcon}
       {label}
     </button>
   );

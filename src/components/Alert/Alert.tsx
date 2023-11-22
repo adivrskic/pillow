@@ -5,6 +5,7 @@ import {
   IoWarningOutline,
 } from "react-icons/io5";
 import { getColor } from "../../helpers";
+import { luminosity } from "../../constants";
 import { AlertProps } from "../../pillow.types";
 import "./Alert.scss";
 
@@ -16,8 +17,8 @@ const Alert = ({
   bgColor,
   textColor,
 }: AlertProps) => {
-  const topShadowColor = getColor(bgColor, -0.2);
-  const bottomShadowColor = getColor(bgColor, 0.2);
+  const topShadowColor = getColor(bgColor, -luminosity);
+  const bottomShadowColor = getColor(bgColor, luminosity);
   let alertIcon;
 
   if (severity === "error") {

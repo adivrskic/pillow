@@ -11,7 +11,7 @@ export const parameters = {
     values: [
       {
         name: "pillow",
-        value: "#963a3a",
+        value: "#f2f3f7",
       },
       {
         name: "white",

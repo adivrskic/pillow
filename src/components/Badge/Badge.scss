@@ -1,25 +1,31 @@
-$color: #444;
-$bg: #f2f3f7;
+@import "../../global.scss";
 
 .pillow-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background-color: $bg;
-  color: $color;
+  border-radius: $border-radius-max;
+  background-color: var(--badge-bg-color);
+  color: var(--badge-text-color);
   text-align: center;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: 700;
-  width: 26px;
-  height: 26px;
+  padding: $padding-regular;
+  font-size: $font-size-regular;
+  width: 1.5rem;
+  height: 1.5rem;
 
   &--flat {
-    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
+    @include box-shadow(
+      "",
+      var(--badge-top-shadow-color),
+      var(--badge-bottom-shadow-color)
+    );
   }
 
   &--pressed {
-    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
+    @include box-shadow(
+      "inset",
+      var(--badge-top-shadow-color),
+      var(--badge-bottom-shadow-color)
+    );
   }
 }

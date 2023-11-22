@@ -1,44 +1,67 @@
-$color: #444;
-$bg: #f2f3f7;
+@import "../../global.scss";
 
 .pillow-btn {
-  border: none;
-  border-radius: 3px;
-  background-color: $bg;
-  cursor: pointer;
-  letter-spacing: 0.7px;
-  color: $color;
-  padding: 10px;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  border-radius: $border-radius;
+  background-color: var(--btn-bg-color);
+  letter-spacing: $letter-spacing;
+  color: var(--btn-text-color);
+  padding: $padding-regular;
   text-align: center;
   width: fit-content;
-  transition: all 0.15s ease-in-out;
+  transition: $transition-regular;
 
-  // a tag styles
-  text-decoration: none;
-  display: inline-block;
+  svg {
+    min-width: $icon-size-regular;
+    min-height: $icon-size-regular;
+    padding: 0 $padding-regular 0 0;
+  }
 
   &--small {
-    font-size: 12px;
-    padding: 10px;
+    font-size: $font-size-small;
+    padding: $padding-small;
+
+    svg {
+      min-width: $icon-size-small;
+      min-height: $icon-size-small;
+    }
   }
 
   &--medium {
-    font-size: 16px;
-    padding: 10px 15px;
+    font-size: $font-size-regular;
+    padding: $padding-regular;
+
+    svg {
+      min-width: $icon-size-regular;
+      min-height: $icon-size-regular;
+    }
   }
 
   &--large {
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: $font-size-large;
+    padding: $padding-large;
+
+    svg {
+      min-width: $icon-size-large;
+      min-height: $icon-size-large;
+    }
   }
 
   &--flat {
-    box-shadow: 4px 4px 8px #e6e7eb, -5px -5px 8px #feffff;
+    @include box-shadow(
+      "",
+      var(--btn-top-shadow-color),
+      var(--btn-bottom-shadow-color)
+    );
   }
 
   &--pressed,
-  &:active {
-    box-shadow: inset 4px 4px 8px #e6e7eb, inset -5px -5px 10px #feffff;
+  :active {
+    @include box-shadow(
+      "inset",
+      var(--btn-top-shadow-color),
+      var(--btn-bottom-shadow-color)
+    );
   }
 }
