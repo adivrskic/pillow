@@ -9,6 +9,7 @@
   letter-spacing: $letter-spacing;
   color: var(--alert-text-color);
   padding: $padding-regular;
+  width: fit-content;
 
   svg {
     min-width: $icon-size-regular;

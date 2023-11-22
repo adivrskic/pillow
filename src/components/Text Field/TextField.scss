@@ -5,6 +5,7 @@
   flex-direction: column;
   border-radius: $border-radius;
   padding: $padding-regular;
+  width: fit-content;
 
   &--flat {
     @include box-shadow(
