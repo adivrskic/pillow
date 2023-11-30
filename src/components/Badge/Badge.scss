@@ -8,10 +8,10 @@
   background-color: var(--badge-bg-color);
   color: var(--badge-text-color);
   text-align: center;
-  padding: $padding-regular;
-  font-size: $font-size-regular;
-  width: 1.5rem;
-  height: 1.5rem;
+  padding: $padding-extrasmall;
+  font-size: $font-size-small;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
 
   &--flat {
     @include box-shadow(

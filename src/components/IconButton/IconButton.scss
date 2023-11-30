@@ -1,16 +1,13 @@
 @import "../../global.scss";
 
-.pillow-chip {
+.pillow-icon-button {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   border-radius: $border-radius-max;
   background-color: var(--chip-bg-color);
   color: var(--chip-text-color);
-  text-align: center;
   padding: $padding-small;
-  font-size: $font-size-regular;
-  letter-spacing: $letter-spacing;
-  width: fit-content;
 
   &--flat {
     @include box-shadow(

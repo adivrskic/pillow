@@ -10,12 +10,22 @@
   padding: $padding-regular;
   text-align: center;
   width: fit-content;
-  transition: $transition-regular;
+  transition: $transition-fast;
+
+  &:hover,
+  &:active {
+    filter: brightness(1.02);
+  }
 
   svg {
     min-width: $icon-size-regular;
     min-height: $icon-size-regular;
     padding: 0 $padding-regular 0 0;
+  }
+
+  &--disabled {
+    opacity: 0.67;
+    cursor: not-allowed;
   }
 
   &--small {

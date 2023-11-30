@@ -1,8 +1,9 @@
 @import "../../global.scss";
 
 .pillow-alert {
+  position: relative;
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   border-radius: $border-radius;
   background-color: var(--alert-bg-color);
   cursor: pointer;
@@ -10,17 +11,33 @@
   color: var(--alert-text-color);
   padding: $padding-regular;
   width: fit-content;
+  max-width: 100%;
 
   svg {
     min-width: $icon-size-regular;
     min-height: $icon-size-regular;
-    margin-right: $padding-regular;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  &__icon {
+    margin-right: $padding-regular;
+  }
+
+  &__close {
+    position: absolute;
+    top: 50%;
+    right: $padding-regular;
+    margin: 0;
+    transform: translateY(-50%);
+
+    + .pillow-alert__content {
+      margin-right: calc($padding-regular + $icon-size-regular);
+    }
   }
 
   &--flat {

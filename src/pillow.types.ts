@@ -1,14 +1,17 @@
+import React from "react";
+
 export interface AlertProps {
   heading: string;
   label: string;
   severity: string;
   variant: string;
+  onClose: () => void;
   bgColor: string;
   textColor: string;
 }
 
 export interface BadgeProps {
-  label: string;
+  label: string | number;
   variant: string;
   bgColor: string;
   textColor: string;
@@ -17,7 +20,7 @@ export interface BadgeProps {
 export interface ButtonProps {
   disabled: boolean;
   href: string;
-  icon: string;
+  icon: React.ReactNode;
   label: string;
   onClick: () => void;
   role: string;
@@ -32,6 +35,7 @@ export interface CardProps {
   imageAlt: string;
   imageSrc: string;
   text: string;
+  textAlign: string;
   variant: string;
   bgColor: string;
   textColor: string;
@@ -47,6 +51,15 @@ export interface ChipProps {
 
 export interface ContainerProps {
   children: React.ReactNode;
+  direction: string;
+  fullWidth: boolean;
+  variant: string;
+  bgColor: string;
+  textColor: string;
+}
+
+export interface IconButtonProps {
+  icon: React.ReactNode;
   variant: string;
   bgColor: string;
   textColor: string;
@@ -61,10 +74,26 @@ export interface ListProps {
   textColor: string;
 }
 
+export interface ShapeProps {
+  complete: boolean;
+  variant: string;
+  bgColor: string;
+}
+
 export interface SpinnerProps {
   complete: boolean;
   variant: string;
   bgColor: string;
+}
+
+export interface SwitchProps {
+  checked: boolean;
+  disabled: boolean;
+  required: boolean;
+  onChange: () => void;
+  variant: string;
+  bgColor: string;
+  textColor: string;
 }
 
 export interface TextFieldProps {

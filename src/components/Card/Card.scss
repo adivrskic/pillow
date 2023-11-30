@@ -18,6 +18,19 @@
     background-color: var(--card-bg-color);
     object-fit: contain;
   }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
   &--flat {
     @include box-shadow(
       "",

@@ -11,8 +11,8 @@ const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
 
 export const BadgeComponent = Template.bind({});
 BadgeComponent.args = {
-  label: "9+",
+  label: 100,
   variant: "flat",
-  bgColor: "#f2f3f7",
-  textColor: "#323232",
+  bgColor: "#E4EBF5",
+  textColor: "#6D5DFC",
 };

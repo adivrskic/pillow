@@ -6,6 +6,8 @@ import "./Container.scss";
 
 const Container = ({
   children,
+  direction,
+  fullWidth,
   variant,
   bgColor,
   textColor,
@@ -21,7 +23,9 @@ const Container = ({
         ["--container-top-shadow-color" as string]: `${topShadowColor}`,
         ["--container-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-container pillow-container--${variant}`}
+      className={`pillow-container pillow-container--${variant} pillow-container--${direction} ${
+        fullWidth ? "pillow-container--full-width" : ""
+      }`}
     >
       {children}
     </div>

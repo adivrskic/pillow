@@ -8,6 +8,8 @@ const Badge = ({ label, variant, bgColor, textColor }: BadgeProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
 
+  const badgeLabel =
+    typeof label === "number" ? (label > 99 ? "99+" : label) : label;
   return (
     <div
       style={{
@@ -18,7 +20,7 @@ const Badge = ({ label, variant, bgColor, textColor }: BadgeProps) => {
       }}
       className={`pillow-badge pillow-badge--${variant}`}
     >
-      {label}
+      {badgeLabel}
     </div>
   );
 };

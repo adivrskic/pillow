@@ -16,21 +16,28 @@ const List = ({
   const bottomShadowColor = getColor(bgColor, luminosity);
 
   return (
-    <div className={`pillow-list`}>
+    <div
+      style={{
+        ["--list-item-bg-color" as string]: `${bgColor}`,
+        ["--list-item-text-color" as string]: `${textColor}`,
+        ["--list-item-top-shadow-color" as string]: `${topShadowColor}`,
+        ["--list-item-bottom-shadow-color" as string]: `${bottomShadowColor}`,
+      }}
+      className={`pillow-list pillow-list--${variant}`}
+    >
       <h2 className="pillow-list__header">{header}</h2>
       <p className="pillow-list__label">{label}</p>
-      <ul className="pillow-list__list">
+      <ul
+        style={{
+          ["--list-item-bg-color" as string]: `${bgColor}`,
+          ["--list-item-text-color" as string]: `${textColor}`,
+          ["--list-item-top-shadow-color" as string]: `${topShadowColor}`,
+          ["--list-item-bottom-shadow-color" as string]: `${bottomShadowColor}`,
+        }}
+        className={`pillow-list__list pillow-list__list--${variant}`}
+      >
         {listItems.map((item, index) => (
-          <li
-            style={{
-              ["--list-item-bg-color" as string]: `${bgColor}`,
-              ["--list-item-text-color" as string]: `${textColor}`,
-              ["--list-item-top-shadow-color" as string]: `${topShadowColor}`,
-              ["--list-item-bottom-shadow-color" as string]: `${bottomShadowColor}`,
-            }}
-            key={index}
-            className={`pillow-list__list-item pillow-list__list-item--${variant}`}
-          >
+          <li key={index} className="pillow-list__list-item">
             {item}
           </li>
         ))}

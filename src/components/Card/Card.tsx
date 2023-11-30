@@ -9,6 +9,7 @@ const Card = ({
   imageAlt,
   imageSrc,
   text,
+  textAlign,
   variant,
   bgColor,
   textColor,
@@ -24,9 +25,9 @@ const Card = ({
         ["--card-top-shadow-color" as string]: `${topShadowColor}`,
         ["--card-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-card pillow-card--${variant}`}
+      className={`pillow-card pillow-card--${variant} pillow-card--${textAlign}`}
     >
-      {imageSrc !== "" && (
+      {imageSrc && (
         <img className="pillow-card__image" src={imageSrc} alt={imageAlt} />
       )}
       <h2 className="pillow-card__heading">{heading}</h2>

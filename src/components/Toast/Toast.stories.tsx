@@ -1,23 +1,22 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Card from "./Card";
+import Toast from "./Toast";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Pillow UI/Card",
-  component: Card,
-} as ComponentMeta<typeof Card>;
+  title: "Pillow UI/Toast",
+  component: Toast,
+} as ComponentMeta<typeof Toast>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
+const Template: ComponentStory<typeof Toast> = (args) => <Toast {...args} />;
 
-export const CardComponent = Template.bind({});
+export const ToastComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-CardComponent.args = {
-  heading: "Example",
-  imageAlt: "Example image",
-  imageSrc: "",
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+ToastComponent.args = {
+  title: "Text Field Example",
+  content: "",
+  onTextChange: () => console.log("change"),
   variant: "flat",
   bgColor: "#E4EBF5",
   textColor: "#6D5DFC",

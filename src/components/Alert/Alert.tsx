@@ -3,6 +3,7 @@ import {
   IoCheckmarkCircleOutline,
   IoInformationCircleOutline,
   IoWarningOutline,
+  IoCloseOutline,
 } from "react-icons/io5";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
@@ -14,6 +15,7 @@ const Alert = ({
   label,
   severity,
   variant,
+  onClose,
   bgColor,
   textColor,
 }: AlertProps) => {
@@ -22,13 +24,13 @@ const Alert = ({
   let alertIcon;
 
   if (severity === "error") {
-    alertIcon = <IoWarningOutline />;
+    alertIcon = <IoWarningOutline className="pillow-alert__icon" />;
   } else if (severity === "warning") {
-    alertIcon = <IoWarningOutline />;
+    alertIcon = <IoWarningOutline className="pillow-alert__icon" />;
   } else if (severity === "info") {
-    alertIcon = <IoInformationCircleOutline />;
+    alertIcon = <IoInformationCircleOutline className="pillow-alert__icon" />;
   } else if (severity === "success") {
-    alertIcon = <IoCheckmarkCircleOutline />;
+    alertIcon = <IoCheckmarkCircleOutline className="pillow-alert__icon" />;
   } else {
     alertIcon = null;
   }
@@ -44,6 +46,12 @@ const Alert = ({
       className={`pillow-alert pillow-alert--${variant} pillow-alert--${severity}`}
     >
       {alertIcon && alertIcon}
+      {onClose && (
+        <IoCloseOutline
+          className="pillow-alert__close"
+          onClick={() => onClose()}
+        />
+      )}
       <div className="pillow-alert__content">
         <h4 className="pillow-alert__heading">{heading}</h4>
         <p className="pillow-alert__label">{label}</p>

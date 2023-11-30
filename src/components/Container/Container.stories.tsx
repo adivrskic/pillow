@@ -17,10 +17,13 @@ export const ContainerComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ContainerComponent.args = {
   children: (
-    <div>
-      Hello <button>Button</button>
-    </div>
+    <>
+      <p>Hello</p>
+      <button>Button</button>
+    </>
   ),
+  direction: "column",
+  fullWidth: false,
   variant: "flat",
   bgColor: "#f2f3f7",
   textColor: "#323232",

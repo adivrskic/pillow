@@ -3,9 +3,22 @@
 .pillow-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: fit-content;
   max-width: 100%;
   padding: $padding-regular;
+  border-radius: $border-radius;
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--row {
+    flex-direction: row;
+  }
+
+  &--column {
+    flex-direction: column;
+  }
 
   &--flat {
     @include box-shadow(

@@ -1,15 +1,10 @@
 import React from "react";
-import {
-  IoCheckmarkCircleOutline,
-  IoInformationCircleOutline,
-  IoWarningOutline,
-} from "react-icons/io5";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
-import { ChipProps } from "../../pillow.types";
-import "./Chip.scss";
+import { IconButtonProps } from "../../pillow.types";
+import "./IconButton.scss";
 
-const Chip = ({ icon, label, variant, bgColor, textColor }: ChipProps) => {
+const IconButton = ({ icon, variant, bgColor, textColor }: IconButtonProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
 
@@ -21,11 +16,11 @@ const Chip = ({ icon, label, variant, bgColor, textColor }: ChipProps) => {
         ["--chip-top-shadow-color" as string]: `${topShadowColor}`,
         ["--chip-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-chip pillow-chip--${variant}`}
+      className={`pillow-icon-button pillow-icon-button--${variant}`}
     >
-      {label}
+      {icon && icon}
     </div>
   );
 };
 
-export default Chip;
+export default IconButton;

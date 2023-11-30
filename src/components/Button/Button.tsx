@@ -1,9 +1,4 @@
 import React from "react";
-import {
-  IoCheckmarkCircleOutline,
-  IoInformationCircleOutline,
-  IoWarningOutline,
-} from "react-icons/io5";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { ButtonProps } from "../../pillow.types";
@@ -23,27 +18,17 @@ const Button = ({
 }: ButtonProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
-  let buttonIcon;
 
-  if (icon === "error") {
-    buttonIcon = <IoWarningOutline />;
-  } else if (icon === "warning") {
-    buttonIcon = <IoWarningOutline />;
-  } else if (icon === "info") {
-    buttonIcon = <IoInformationCircleOutline />;
-  } else if (icon === "success") {
-    buttonIcon = <IoCheckmarkCircleOutline />;
-  } else {
-    buttonIcon = null;
-  }
   return href ? (
     <a
       role={role}
-      className={`pillow-btn pillow-btn--${variant} pillow-btn--${size}`}
-      onClick={() => onClick}
+      className={`pillow-btn pillow-btn--${variant} pillow-btn--${size}  ${
+        disabled ? "pillow-btn--disabled" : ""
+      }`}
+      onClick={() => onClick()}
       href={href}
     >
-      {icon && buttonIcon}
+      {icon && icon}
       {label}
     </a>
   ) : (
@@ -55,11 +40,13 @@ const Button = ({
         ["--btn-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
       role={role}
-      className={`pillow-btn pillow-btn--${variant} pillow-btn--${size}`}
+      className={`pillow-btn pillow-btn--${variant} pillow-btn--${size} ${
+        disabled ? "pillow-btn--disabled" : ""
+      }`}
       disabled={disabled}
-      onClick={() => onClick}
+      onClick={() => onClick()}
     >
-      {icon && buttonIcon}
+      {icon && icon}
       {label}
     </button>
   );

@@ -18,6 +18,6 @@ ListComponent.args = {
   label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   listItems: [<p>List item 1</p>, <p>List item 2</p>, <p>List item 3</p>],
   variant: "flat",
-  bgColor: "#f2f3f7",
-  textColor: "#323232",
+  bgColor: "#E4EBF5",
+  textColor: "#6D5DFC",
 };

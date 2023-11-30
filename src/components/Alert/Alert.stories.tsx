@@ -15,6 +15,7 @@ AlertComponent.args = {
   label: "This is an example of a success alert",
   variant: "flat",
   severity: "success",
-  bgColor: "#f2f3f7",
-  textColor: "#323232",
+  onClose: () => console.log("Closing"),
+  bgColor: "#E4EBF5",
+  textColor: "#6D5DFC",
 };
