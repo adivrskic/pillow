@@ -45,7 +45,7 @@
 
     &--flat {
       @include box-shadow(
-        "",
+        "inset",
         var(--list-item-top-shadow-color),
         var(--list-item-bottom-shadow-color)
       );
@@ -53,7 +53,7 @@
 
     &--pressed {
       @include box-shadow(
-        "inset",
+        "",
         var(--list-item-top-shadow-color),
         var(--list-item-bottom-shadow-color)
       );

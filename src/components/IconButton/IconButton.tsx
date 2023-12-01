@@ -4,7 +4,13 @@ import { luminosity } from "../../constants";
 import { IconButtonProps } from "../../pillow.types";
 import "./IconButton.scss";
 
-const IconButton = ({ icon, variant, bgColor, textColor }: IconButtonProps) => {
+const IconButton = ({
+  icon,
+  variant,
+  size,
+  bgColor,
+  textColor,
+}: IconButtonProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
 
@@ -16,7 +22,7 @@ const IconButton = ({ icon, variant, bgColor, textColor }: IconButtonProps) => {
         ["--chip-top-shadow-color" as string]: `${topShadowColor}`,
         ["--chip-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-icon-button pillow-icon-button--${variant}`}
+      className={`pillow-icon-button pillow-icon-button--${variant} pillow-icon-button--${size}`}
     >
       {icon && icon}
     </div>

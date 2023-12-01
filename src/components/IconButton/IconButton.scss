@@ -9,6 +9,26 @@
   color: var(--chip-text-color);
   padding: $padding-small;
 
+  svg {
+    height: calc(80% + $padding-small);
+    width: calc(80% + $padding-small);
+  }
+
+  &--small {
+    width: 20px;
+    height: 20px;
+  }
+
+  &--medium {
+    width: 26px;
+    height: 26px;
+  }
+
+  &--large {
+    width: 32px;
+    height: 32px;
+  }
+
   &--flat {
     @include box-shadow(
       "",

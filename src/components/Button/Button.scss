@@ -67,7 +67,7 @@
   }
 
   &--pressed,
-  :active {
+  &:active {
     @include box-shadow(
       "inset",
       var(--btn-top-shadow-color),

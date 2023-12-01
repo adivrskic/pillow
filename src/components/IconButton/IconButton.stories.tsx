@@ -18,6 +18,7 @@ export const IconButtonComponent = Template.bind({});
 IconButtonComponent.args = {
   icon: <IoCheckmarkCircleOutline />,
   variant: "flat",
+  size: "medium",
   bgColor: "#E4EBF5",
   textColor: "#6D5DFC",
 };

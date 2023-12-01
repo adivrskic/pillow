@@ -61,6 +61,7 @@ export interface ContainerProps {
 export interface IconButtonProps {
   icon: React.ReactNode;
   variant: string;
+  size: string;
   bgColor: string;
   textColor: string;
 }
