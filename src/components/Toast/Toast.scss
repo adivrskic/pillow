@@ -1,8 +1,8 @@
 @import "../../global.scss";
 
-.pillow-textfield {
-  display: inline-flex;
-  flex-direction: column;
+.pillow-toast {
+  display: flex;
+  align-items: center;
   border-radius: $border-radius;
   padding: $padding-regular;
   width: fit-content;
@@ -10,42 +10,20 @@
   &--flat {
     @include box-shadow(
       "",
-      var(--textfield-top-shadow-color),
-      var(--textfield-bottom-shadow-color)
+      var(--toast-top-shadow-color),
+      var(--toast-bottom-shadow-color)
     );
   }
 
   &--pressed {
     @include box-shadow(
       "inset",
-      var(--textfield-top-shadow-color),
-      var(--textfield-bottom-shadow-color)
+      var(--toast-top-shadow-color),
+      var(--toast-bottom-shadow-color)
     );
   }
 
   &__title {
-    margin: 0 0 $padding-regular 0;
+    margin: 0 $padding-regular 0 0;
   }
-
-  &__textarea {
-    background: var(--textfield-bg-color);
-    padding: $padding-regular;
-    min-width: 200px;
-  }
-}
-
-.pillow-textfield .pillow-textfield__textarea.pillow-textfield--flat {
-  @include box-shadow(
-    "inset",
-    var(--textfield-top-shadow-color),
-    var(--textfield-bottom-shadow-color)
-  );
-}
-
-.pillow-textfield .pillow-textfield__textarea.pillow-textfield--pressed {
-  @include box-shadow(
-    "",
-    var(--textfield-top-shadow-color),
-    var(--textfield-bottom-shadow-color)
-  );
 }

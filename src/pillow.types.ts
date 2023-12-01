@@ -76,7 +76,10 @@ export interface ListProps {
 }
 
 export interface ShapeProps {
-  complete: boolean;
+  width: number;
+  height: number;
+  round: boolean;
+  animate: boolean;
   variant: string;
   bgColor: string;
 }
@@ -84,6 +87,7 @@ export interface ShapeProps {
 export interface SpinnerProps {
   complete: boolean;
   variant: string;
+  spinColor: string;
   bgColor: string;
 }
 
@@ -101,6 +105,15 @@ export interface TextFieldProps {
   title: string;
   content: string;
   onTextChange: () => void;
+  variant: string;
+  bgColor: string;
+  textColor: string;
+}
+
+export interface ToastProps {
+  title: string;
+  duration: number;
+  onClose: () => void;
   variant: string;
   bgColor: string;
   textColor: string;

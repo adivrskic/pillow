@@ -18,5 +18,6 @@ export const SpinnerComponent = Template.bind({});
 SpinnerComponent.args = {
   complete: false,
   variant: "flat",
+  spinColor: "#6D5DFC",
   bgColor: "#E4EBF5",
 };

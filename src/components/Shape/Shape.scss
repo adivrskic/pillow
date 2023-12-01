@@ -1,0 +1,53 @@
+@import "../../global.scss";
+
+.pillow-shape {
+  height: var(--shape-height);
+  width: var(--shape-width);
+  background-color: var(--shape-bg-color);
+
+  &--flat {
+    @include box-shadow(
+      "",
+      var(--shape-top-shadow-color),
+      var(--shape-bottom-shadow-color)
+    );
+  }
+
+  &--pressed {
+    @include box-shadow(
+      "inset",
+      var(--shape-top-shadow-color),
+      var(--shape-bottom-shadow-color)
+    );
+  }
+
+  &--round {
+    border-radius: $border-radius-max;
+  }
+
+  &--animate {
+    -webkit-animation: spin 60s infinite linear;
+    animation: spin 60s infinite linear;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

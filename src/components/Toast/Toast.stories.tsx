@@ -14,9 +14,9 @@ const Template: ComponentStory<typeof Toast> = (args) => <Toast {...args} />;
 export const ToastComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ToastComponent.args = {
-  title: "Text Field Example",
-  content: "",
-  onTextChange: () => console.log("change"),
+  title: "This is a toast example.",
+  duration: 3,
+  onClose: () => console.log("Closed"),
   variant: "flat",
   bgColor: "#E4EBF5",
   textColor: "#6D5DFC",

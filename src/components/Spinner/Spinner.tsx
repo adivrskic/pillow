@@ -4,7 +4,7 @@ import { luminosity } from "../../constants";
 import { SpinnerProps } from "../../pillow.types";
 import "./Spinner.scss";
 
-const Spinner = ({ complete, variant, bgColor }: SpinnerProps) => {
+const Spinner = ({ complete, spinColor, variant, bgColor }: SpinnerProps) => {
   if (complete) return null;
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
@@ -13,6 +13,7 @@ const Spinner = ({ complete, variant, bgColor }: SpinnerProps) => {
     <div
       style={{
         ["--spinner-bg-color" as string]: `${bgColor}`,
+        ["--spinner-spin-color" as string]: `${spinColor}`,
         ["--spinner-top-shadow-color" as string]: `${topShadowColor}`,
         ["--spinner-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}

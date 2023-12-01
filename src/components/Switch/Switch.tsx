@@ -16,16 +16,23 @@ const Switch = ({
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
   const style = {
-    ["--textfield-bg-color" as string]: `${bgColor}`,
-    ["--textfield-text-color" as string]: `${textColor}`,
-    ["--textfield-top-shadow-color" as string]: `${topShadowColor}`,
-    ["--textfield-bottom-shadow-color" as string]: `${bottomShadowColor}`,
+    ["--switch-bg-color" as string]: `${bgColor}`,
+    ["--switch-text-color" as string]: `${textColor}`,
+    ["--switch-top-shadow-color" as string]: `${topShadowColor}`,
+    ["--switch-bottom-shadow-color" as string]: `${bottomShadowColor}`,
   };
   return (
-    <div
-      style={style}
-      className={`pillow-switch pillow-switch--${variant}`}
-    ></div>
+    <label style={style} className={`pillow-switch pillow-switch--${variant}`}>
+      <input
+        type="checkbox"
+        checked={checked}
+        disabled={disabled}
+        required={required}
+        onChange={() => onChange}
+        className="pillow-switch__input"
+      />
+      <span className="switch" />
+    </label>
   );
 };
 
