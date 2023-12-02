@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
@@ -13,7 +13,7 @@ const Toast = ({
   bgColor,
   textColor,
 }: ToastProps) => {
-  const [active, setActive] = useState(true);
+  let active = true;
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
   const style = {
@@ -24,13 +24,13 @@ const Toast = ({
   };
 
   const handleClose = () => {
+    active = false;
     onClose();
-    setActive(false);
   };
 
   if (duration) {
     setTimeout(() => {
-      setActive(false);
+      active = false;
     }, duration * 1000);
   }
 
