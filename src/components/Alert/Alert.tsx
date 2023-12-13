@@ -8,7 +8,7 @@ import {
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { AlertProps } from "../../pillow.types";
-import "./Alert.scss";
+import s from "./Alert.module.scss";
 
 const Alert = ({
   heading,
@@ -24,13 +24,13 @@ const Alert = ({
   let alertIcon;
 
   if (severity === "error") {
-    alertIcon = <IoWarningOutline className="pillow-alert__icon" />;
+    alertIcon = <IoWarningOutline className={s.icon} />;
   } else if (severity === "warning") {
-    alertIcon = <IoWarningOutline className="pillow-alert__icon" />;
+    alertIcon = <IoWarningOutline className={s.icon} />;
   } else if (severity === "info") {
-    alertIcon = <IoInformationCircleOutline className="pillow-alert__icon" />;
+    alertIcon = <IoInformationCircleOutline className={s.icon} />;
   } else if (severity === "success") {
-    alertIcon = <IoCheckmarkCircleOutline className="pillow-alert__icon" />;
+    alertIcon = <IoCheckmarkCircleOutline className={s.icon} />;
   } else {
     alertIcon = null;
   }
@@ -43,18 +43,18 @@ const Alert = ({
         ["--alert-top-shadow-color" as string]: `${topShadowColor}`,
         ["--alert-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-alert pillow-alert--${variant} pillow-alert--${severity}`}
+      className={`${s.alert} ${variant === "flat" ? s.flat : s.pressed}`}
     >
       {alertIcon && alertIcon}
       {onClose && (
         <IoCloseOutline
-          className="pillow-alert__close"
+          className={`${s.icon} ${s.close}`}
           onClick={() => onClose()}
         />
       )}
-      <div className="pillow-alert__content">
-        <h4 className="pillow-alert__heading">{heading}</h4>
-        <p className="pillow-alert__label">{label}</p>
+      <div className={s.content}>
+        <h4 className={s.heading}>{heading}</h4>
+        <p className={s.label}>{label}</p>
       </div>
     </div>
   );

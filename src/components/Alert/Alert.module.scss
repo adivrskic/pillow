@@ -1,0 +1,63 @@
+@import "../../global.scss";
+
+.alert {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border-radius: $border-radius;
+  background-color: var(--alert-bg-color);
+  cursor: pointer;
+  letter-spacing: $letter-spacing;
+  color: var(--alert-text-color);
+  padding: $padding-regular;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.flat {
+  @include box-shadow(
+    "",
+    var(--alert-top-shadow-color),
+    var(--alert-bottom-shadow-color)
+  );
+}
+
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--alert-top-shadow-color),
+    var(--alert-bottom-shadow-color)
+  );
+}
+
+.icon {
+  min-width: $icon-size-regular;
+  min-height: $icon-size-regular;
+  margin-right: $padding-regular;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.close {
+  position: absolute;
+  top: 50%;
+  right: $padding-regular;
+  margin: 0;
+  transform: translateY(-50%);
+}
+
+.close + .content {
+  margin-right: calc($padding-regular + $icon-size-regular);
+}
+
+.heading {
+  font-size: $font-size-large;
+}
+
+.label {
+  font-size: $font-size-regular;
+}
