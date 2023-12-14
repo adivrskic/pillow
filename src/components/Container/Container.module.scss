@@ -23,6 +23,30 @@
   flex-direction: column;
 }
 
+.left.row {
+  align-items: flex-start;
+}
+
+.left.column {
+  align-items: flex-start;
+}
+
+.center.row {
+  align-items: center;
+}
+
+.center.column {
+  align-items: center;
+}
+
+.right.row {
+  align-items: flex-end;
+}
+
+.right.column {
+  align-items: flex-end;
+}
+
 .flat {
   @include box-shadow(
     "",

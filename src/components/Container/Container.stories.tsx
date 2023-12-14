@@ -24,6 +24,7 @@ ContainerComponent.args = {
   ),
   direction: "column",
   fullWidth: false,
+  align: "left",
   variant: "flat",
   bgColor: "#E4EBF5",
   textColor: "#6D5DFC",

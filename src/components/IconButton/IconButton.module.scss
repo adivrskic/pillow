@@ -5,14 +5,14 @@
   justify-content: center;
   align-items: center;
   border-radius: $border-radius-max;
-  background-color: var(--chip-bg-color);
-  color: var(--chip-text-color);
-  padding: $padding-small;
+  background-color: var(--iconb-bg-color);
+  color: var(--iconb-text-color);
 }
 
-.icon {
-  height: calc(80% + $padding-small);
-  width: calc(80% + $padding-small);
+.btn svg {
+  height: 75%;
+  width: 75%;
+  fill: var(--iconb-text-color);
 }
 
 .small {
@@ -33,15 +33,15 @@
 .flat {
   @include box-shadow(
     "",
-    var(--chip-top-shadow-color),
-    var(--chip-bottom-shadow-color)
+    var(--iconb-top-shadow-color),
+    var(--iconb-bottom-shadow-color)
   );
 }
 
 .pressed {
   @include box-shadow(
     "inset",
-    var(--chip-top-shadow-color),
-    var(--chip-bottom-shadow-color)
+    var(--iconb-top-shadow-color),
+    var(--iconb-bottom-shadow-color)
   );
 }

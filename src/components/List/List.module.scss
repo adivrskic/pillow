@@ -29,11 +29,13 @@
 .header {
   margin: 0 0 $padding-regular 0;
   max-width: 20rem;
+  color: var(--list-item-text-color);
 }
 
 .label {
   margin: 0 0 $padding-regular 0;
   max-width: 20rem;
+  color: var(--list-item-text-color);
 }
 
 .ul {
@@ -61,6 +63,7 @@
 
 .li {
   padding: $padding-regular;
+  color: var(--list-item-text-color);
 }
 
 .li:not(:last-child) {

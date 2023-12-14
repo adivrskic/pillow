@@ -53,6 +53,7 @@ export interface ContainerProps {
   children: React.ReactNode;
   direction: string;
   fullWidth: boolean;
+  align: string;
   variant: string;
   bgColor: string;
   textColor: string;

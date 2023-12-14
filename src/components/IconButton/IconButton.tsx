@@ -17,10 +17,10 @@ const IconButton = ({
   return (
     <div
       style={{
-        ["--chip-bg-color" as string]: `${bgColor}`,
-        ["--chip-text-color" as string]: `${textColor}`,
-        ["--chip-top-shadow-color" as string]: `${topShadowColor}`,
-        ["--chip-bottom-shadow-color" as string]: `${bottomShadowColor}`,
+        ["--iconb-bg-color" as string]: `${bgColor}`,
+        ["--iconb-text-color" as string]: `${textColor}`,
+        ["--iconb-top-shadow-color" as string]: `${topShadowColor}`,
+        ["--iconb-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
       className={`${s.btn} ${variant === "flat" ? s.flat : s.pressed} ${
         size === "small" && s.small

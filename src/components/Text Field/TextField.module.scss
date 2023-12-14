@@ -25,12 +25,14 @@
 }
 
 .title {
+  color: var(--textfield-text-color);
   font-size: $font-size-large;
   margin: 0 0 $padding-regular 0;
 }
 
 .textarea {
   background: var(--textfield-bg-color);
+  color: var(--textfield-text-color);
   padding: $padding-regular;
   min-width: 200px;
   border-radius: $border-radius;

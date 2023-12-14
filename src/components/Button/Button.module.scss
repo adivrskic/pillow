@@ -13,8 +13,8 @@
   transition: $transition-fast;
 }
 
-.btn:hover,
-.btn:active {
+.btn:not(.disabled):hover,
+.btn:not(.disabled):active {
   filter: brightness(1.03);
 }
 
@@ -68,7 +68,7 @@
 }
 
 .pressed,
-.pressed:active {
+.flat:active {
   @include box-shadow(
     "inset",
     var(--btn-top-shadow-color),

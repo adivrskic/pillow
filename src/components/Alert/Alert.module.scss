@@ -8,7 +8,6 @@
   background-color: var(--alert-bg-color);
   cursor: pointer;
   letter-spacing: $letter-spacing;
-  color: var(--alert-text-color);
   padding: $padding-regular;
   width: fit-content;
   max-width: 100%;
@@ -34,6 +33,7 @@
   min-width: $icon-size-regular;
   min-height: $icon-size-regular;
   margin-right: $padding-regular;
+  stroke: var(--alert-text-color);
 }
 
 .content {
@@ -55,9 +55,11 @@
 }
 
 .heading {
-  font-size: $font-size-large;
+  font-size: $font-size-regular;
+  color: var(--alert-text-color);
 }
 
 .label {
-  font-size: $font-size-regular;
+  font-size: $font-size-small;
+  color: var(--alert-text-color);
 }

@@ -8,6 +8,7 @@ const Container = ({
   children,
   direction,
   fullWidth,
+  align,
   variant,
   bgColor,
   textColor,
@@ -23,10 +24,13 @@ const Container = ({
         ["--container-top-shadow-color" as string]: `${topShadowColor}`,
         ["--container-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`${s.container} ${variant === "flat" ? s.flat : s.pressed} ${
-        direction === "row" ? s.row : s.column
-      }
+      className={`${s.container} ${variant === "flat" ? s.flat : null} ${
+        variant === "pressed" ? s.pressed : null
+      }${direction === "row" ? s.row : s.column}
         ${fullWidth && s.full}
+        ${align === "left" && s.left}
+        ${align === "center" && s.center}
+        ${align === "right" && s.right}
       }`}
     >
       {children}

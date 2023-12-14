@@ -4,7 +4,6 @@
   border-radius: $border-radius;
   background-color: var(--card-bg-color);
   letter-spacing: $letter-spacing;
-  color: var(--card-text-color);
   padding: $padding-regular;
   max-width: 22rem;
   text-align: left;
@@ -33,11 +32,13 @@
 }
 
 .heading {
-  font-size: $font-size-large;
+  font-size: $font-size-regular;
+  color: var(--card-text-color);
 }
 
 .text {
   font-size: $font-size-regular;
+  color: var(--card-text-color);
 }
 
 .flat {
