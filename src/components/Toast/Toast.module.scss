@@ -1,0 +1,30 @@
+@import "../../global.scss";
+
+.toast {
+  display: flex;
+  align-items: center;
+  border-radius: $border-radius;
+  padding: $padding-regular;
+  width: fit-content;
+}
+
+.flat {
+  @include box-shadow(
+    "",
+    var(--toast-top-shadow-color),
+    var(--toast-bottom-shadow-color)
+  );
+}
+
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--toast-top-shadow-color),
+    var(--toast-bottom-shadow-color)
+  );
+}
+
+.title {
+  font-size: $font-size-regular;
+  margin: 0 $padding-regular 0 0;
+}

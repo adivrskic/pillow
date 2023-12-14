@@ -2,7 +2,7 @@ import React from "react";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { ButtonProps } from "../../pillow.types";
-import "./Button.scss";
+import s from "./Button.module.scss";
 
 const Button = ({
   disabled,
@@ -22,8 +22,10 @@ const Button = ({
   return href ? (
     <a
       role={role}
-      className={`pillow-btn pillow-btn--${variant} pillow-btn--${size}  ${
-        disabled ? "pillow-btn--disabled" : ""
+      className={`${s.btn} ${variant === "flat" ? s.flat : s.pressed} ${
+        disabled && s.disabled
+      } ${size === "small" && s.small} ${size === "medium" && s.medium} ${
+        size === "large" && s.large
       }`}
       onClick={() => onClick()}
       href={href}
@@ -40,8 +42,10 @@ const Button = ({
         ["--btn-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
       role={role}
-      className={`pillow-btn pillow-btn--${variant} pillow-btn--${size} ${
-        disabled ? "pillow-btn--disabled" : ""
+      className={`${s.btn} ${variant === "flat" ? s.flat : s.pressed} ${
+        disabled && s.disabled
+      } ${size === "small" && s.small} ${size === "medium" && s.medium} ${
+        size === "large" && s.large
       }`}
       disabled={disabled}
       onClick={() => onClick()}

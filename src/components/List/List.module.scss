@@ -1,0 +1,68 @@
+@import "../../global.scss";
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: $border-radius;
+  padding: $padding-regular;
+  color: var(--list-item-text-color);
+}
+
+.flat {
+  @include box-shadow(
+    "",
+    var(--list-item-top-shadow-color),
+    var(--list-item-bottom-shadow-color)
+  );
+}
+
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--list-item-top-shadow-color),
+    var(--list-item-bottom-shadow-color)
+  );
+}
+
+.header {
+  margin: 0 0 $padding-regular 0;
+  max-width: 20rem;
+}
+
+.label {
+  margin: 0 0 $padding-regular 0;
+  max-width: 20rem;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-radius: $border-radius;
+}
+.ul.flat {
+  @include box-shadow(
+    "inset",
+    var(--list-item-top-shadow-color),
+    var(--list-item-bottom-shadow-color)
+  );
+}
+
+.ul.pressed {
+  @include box-shadow(
+    "",
+    var(--list-item-top-shadow-color),
+    var(--list-item-bottom-shadow-color)
+  );
+}
+
+.li {
+  padding: $padding-regular;
+}
+
+.li:not(:last-child) {
+  border-bottom: 1px solid var(--list-item-top-shadow-color);
+}

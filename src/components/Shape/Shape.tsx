@@ -2,7 +2,7 @@ import React from "react";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { ShapeProps } from "../../pillow.types";
-import "./Shape.scss";
+import s from "./Shape.module.scss";
 
 const Shape = ({
   width,
@@ -26,9 +26,9 @@ const Shape = ({
   return (
     <div
       style={styles}
-      className={`pillow-shape  pillow-shape--${variant} ${
-        animate ? "pillow-shape--animate" : ""
-      } ${round ? "pillow-shape--round" : ""}`}
+      className={`${s.shape} ${variant === "flat" ? s.flat : s.pressed} ${
+        animate ? s.animate : null
+      } ${round ? s.round : null}`}
     ></div>
   );
 };

@@ -1,34 +1,34 @@
 @import "../../global.scss";
 
-.pillow-shape {
+.shape {
   height: var(--shape-height);
   width: var(--shape-width);
   background-color: var(--shape-bg-color);
+}
 
-  &--flat {
-    @include box-shadow(
-      "",
-      var(--shape-top-shadow-color),
-      var(--shape-bottom-shadow-color)
-    );
-  }
+.flat {
+  @include box-shadow(
+    "",
+    var(--shape-top-shadow-color),
+    var(--shape-bottom-shadow-color)
+  );
+}
 
-  &--pressed {
-    @include box-shadow(
-      "inset",
-      var(--shape-top-shadow-color),
-      var(--shape-bottom-shadow-color)
-    );
-  }
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--shape-top-shadow-color),
+    var(--shape-bottom-shadow-color)
+  );
+}
 
-  &--round {
-    border-radius: $border-radius-max;
-  }
+.round {
+  border-radius: $border-radius-max;
+}
 
-  &--animate {
-    -webkit-animation: spin 60s infinite linear;
-    animation: spin 60s infinite linear;
-  }
+.animate {
+  -webkit-animation: spin 60s infinite linear;
+  animation: spin 60s infinite linear;
 }
 
 @-webkit-keyframes spin {

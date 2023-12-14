@@ -1,6 +1,6 @@
 @import "../../global.scss";
 
-.pillow-badge {
+.badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -12,20 +12,20 @@
   font-size: $font-size-small;
   min-width: 1.5rem;
   min-height: 1.5rem;
+}
 
-  &--flat {
-    @include box-shadow(
-      "",
-      var(--badge-top-shadow-color),
-      var(--badge-bottom-shadow-color)
-    );
-  }
+.flat {
+  @include box-shadow(
+    "",
+    var(--badge-top-shadow-color),
+    var(--badge-bottom-shadow-color)
+  );
+}
 
-  &--pressed {
-    @include box-shadow(
-      "inset",
-      var(--badge-top-shadow-color),
-      var(--badge-bottom-shadow-color)
-    );
-  }
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--badge-top-shadow-color),
+    var(--badge-bottom-shadow-color)
+  );
 }

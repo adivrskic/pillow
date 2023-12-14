@@ -1,0 +1,68 @@
+@import "../../global.scss";
+
+.spinner {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius-max;
+  width: 4rem;
+  height: 4rem;
+}
+
+.flat {
+  @include box-shadow(
+    "",
+    var(--spinner-top-shadow-color),
+    var(--spinner-bottom-shadow-color)
+  );
+}
+
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--spinner-top-shadow-color),
+    var(--spinner-bottom-shadow-color)
+  );
+}
+
+.inner,
+.inner:after {
+  border-radius: $border-radius-max;
+  width: 75%;
+  height: 75%;
+}
+
+.inner {
+  position: relative;
+  text-indent: -9999em;
+  border-top: 8px solid rgba(255, 255, 255, 0.25);
+  border-right: 8px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 8px solid rgba(255, 255, 255, 0.25);
+  border-left: 8px solid var(--spinner-spin-color);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: spin 0.5s infinite linear;
+  animation: spin 0.5s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

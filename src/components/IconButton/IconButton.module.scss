@@ -1,0 +1,47 @@
+@import "../../global.scss";
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius-max;
+  background-color: var(--chip-bg-color);
+  color: var(--chip-text-color);
+  padding: $padding-small;
+}
+
+.icon {
+  height: calc(80% + $padding-small);
+  width: calc(80% + $padding-small);
+}
+
+.small {
+  width: 20px;
+  height: 20px;
+}
+
+.medium {
+  width: 26px;
+  height: 26px;
+}
+
+.large {
+  width: 32px;
+  height: 32px;
+}
+
+.flat {
+  @include box-shadow(
+    "",
+    var(--chip-top-shadow-color),
+    var(--chip-bottom-shadow-color)
+  );
+}
+
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--chip-top-shadow-color),
+    var(--chip-bottom-shadow-color)
+  );
+}

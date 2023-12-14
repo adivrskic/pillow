@@ -2,7 +2,7 @@ import React from "react";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { SpinnerProps } from "../../pillow.types";
-import "./Spinner.scss";
+import s from "./Spinner.module.scss";
 
 const Spinner = ({ complete, spinColor, variant, bgColor }: SpinnerProps) => {
   if (complete) return null;
@@ -17,9 +17,9 @@ const Spinner = ({ complete, spinColor, variant, bgColor }: SpinnerProps) => {
         ["--spinner-top-shadow-color" as string]: `${topShadowColor}`,
         ["--spinner-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-spinner pillow-spinner--${variant}`}
+      className={`${s.spinner} ${variant === "flat" ? s.flat : s.pressed}`}
     >
-      <div className="pillow-spinner__spinner"></div>
+      <div className={s.inner}></div>
     </div>
   );
 };

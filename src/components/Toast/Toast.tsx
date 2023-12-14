@@ -3,7 +3,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { ToastProps } from "../../pillow.types";
-import "./Toast.scss";
+import s from "./Toast.module.scss";
 
 const Toast = ({
   title,
@@ -37,12 +37,12 @@ const Toast = ({
   if (!active) return null;
 
   return (
-    <div style={style} className={`pillow-toast pillow-toast--${variant}`}>
-      <p className="pillow-toast__title">{title}</p>
-      <IoCloseOutline
-        className="pillow-toast__close"
-        onClick={() => handleClose()}
-      />
+    <div
+      style={style}
+      className={`${s.toast} ${variant === "flat" ? s.flat : s.pressed}`}
+    >
+      <p className={s.title}>{title}</p>
+      <IoCloseOutline className={s.close} onClick={() => handleClose()} />
     </div>
   );
 };

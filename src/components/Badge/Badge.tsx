@@ -2,7 +2,7 @@ import React from "react";
 import { luminosity } from "../../constants";
 import { getColor } from "../../helpers";
 import { BadgeProps } from "../../pillow.types";
-import "./Badge.scss";
+import s from "./Badge.module.scss";
 
 const Badge = ({ label, variant, bgColor, textColor }: BadgeProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
@@ -18,7 +18,7 @@ const Badge = ({ label, variant, bgColor, textColor }: BadgeProps) => {
         ["--badge-top-shadow-color" as string]: `${topShadowColor}`,
         ["--badge-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-badge pillow-badge--${variant}`}
+      className={`${s.badge} ${variant === "flat" ? s.flat : s.pressed}`}
     >
       {badgeLabel}
     </div>

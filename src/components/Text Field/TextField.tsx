@@ -2,7 +2,7 @@ import React from "react";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { TextFieldProps } from "../../pillow.types";
-import "./TextField.scss";
+import s from "./TextField.module.scss";
 
 const TextField = ({
   title,
@@ -23,12 +23,12 @@ const TextField = ({
   return (
     <div
       style={style}
-      className={`pillow-textfield pillow-textfield--${variant}`}
+      className={`${s.textfield} ${variant === "flat" ? s.flat : s.pressed}`}
     >
-      <h2 className="pillow-textfield__title">{title}</h2>
+      <h2 className={s.title}>{title}</h2>
       <textarea
         style={style}
-        className={`pillow-textfield__textarea pillow-textfield--${variant}`}
+        className={`${s.textarea} ${variant === "flat" ? s.flat : s.pressed}`}
         onChange={(e) => onTextChange}
       >
         {content}

@@ -1,0 +1,57 @@
+@import "../../global.scss";
+
+.card {
+  border-radius: $border-radius;
+  background-color: var(--card-bg-color);
+  letter-spacing: $letter-spacing;
+  color: var(--card-text-color);
+  padding: $padding-regular;
+  max-width: 22rem;
+  text-align: left;
+}
+
+.image {
+  display: inline-block;
+  border-radius: $border-radius;
+  width: 100%;
+  height: 12rem;
+  max-height: 12rem;
+  background-color: var(--card-bg-color);
+  object-fit: contain;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.heading {
+  font-size: $font-size-large;
+}
+
+.text {
+  font-size: $font-size-regular;
+}
+
+.flat {
+  @include box-shadow(
+    "",
+    var(--card-top-shadow-color),
+    var(--card-bottom-shadow-color)
+  );
+}
+
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--card-top-shadow-color),
+    var(--card-bottom-shadow-color)
+  );
+}

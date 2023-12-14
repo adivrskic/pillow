@@ -1,0 +1,56 @@
+@import "../../global.scss";
+
+.switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 28px;
+  border-radius: $border-radius-max;
+}
+
+.flat {
+  @include box-shadow(
+    "",
+    var(--switch-top-shadow-color),
+    var(--switch-bottom-shadow-color)
+  );
+}
+
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--switch-top-shadow-color),
+    var(--switch-bottom-shadow-color)
+  );
+}
+
+.disabled {
+  opacity: 0.67;
+  cursor: not-allowed;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .inner::before {
+  transform: translateX(20px);
+  background-color: var(--switch-text-color);
+}
+
+input[type="checkbox"]:checked + .inner {
+  background-color: var(--switch-text-color);
+}
+
+.inner::before {
+  position: absolute;
+  content: "";
+  left: 4px;
+  top: 4px;
+  width: 21px;
+  height: 21px;
+  background-color: var(--switch-top-shadow-color);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}

@@ -1,0 +1,77 @@
+@import "../../global.scss";
+
+.btn {
+  display: flex;
+  align-items: center;
+  border-radius: $border-radius;
+  background-color: var(--btn-bg-color);
+  letter-spacing: $letter-spacing;
+  color: var(--btn-text-color);
+  padding: $padding-regular;
+  text-align: center;
+  width: fit-content;
+  transition: $transition-fast;
+}
+
+.btn:hover,
+.btn:active {
+  filter: brightness(1.03);
+}
+
+.icon {
+  min-width: $icon-size-regular;
+  min-height: $icon-size-regular;
+  padding: 0 $padding-regular 0 0;
+}
+
+.disabled {
+  opacity: 0.67;
+  cursor: not-allowed;
+}
+
+.small {
+  font-size: $font-size-small;
+  padding: $padding-small;
+}
+
+.small .icon {
+  min-width: $icon-size-small;
+  min-height: $icon-size-small;
+}
+
+.medium {
+  font-size: $font-size-regular;
+  padding: $padding-regular;
+}
+
+.medium .icon {
+  min-width: $icon-size-regular;
+  min-height: $icon-size-regular;
+}
+
+.large {
+  font-size: $font-size-large;
+  padding: $padding-large;
+}
+
+.large .icon {
+  min-width: $icon-size-large;
+  min-height: $icon-size-large;
+}
+
+.flat {
+  @include box-shadow(
+    "",
+    var(--btn-top-shadow-color),
+    var(--btn-bottom-shadow-color)
+  );
+}
+
+.pressed,
+.pressed:active {
+  @include box-shadow(
+    "inset",
+    var(--btn-top-shadow-color),
+    var(--btn-bottom-shadow-color)
+  );
+}

@@ -1,6 +1,6 @@
 @import "../../global.scss";
 
-.pillow-chip {
+.chip {
   display: inline-flex;
   align-items: center;
   border-radius: $border-radius-max;
@@ -11,20 +11,20 @@
   font-size: $font-size-regular;
   letter-spacing: $letter-spacing;
   width: fit-content;
+}
 
-  &--flat {
-    @include box-shadow(
-      "",
-      var(--chip-top-shadow-color),
-      var(--chip-bottom-shadow-color)
-    );
-  }
+.flat {
+  @include box-shadow(
+    "",
+    var(--chip-top-shadow-color),
+    var(--chip-bottom-shadow-color)
+  );
+}
 
-  &--pressed {
-    @include box-shadow(
-      "inset",
-      var(--chip-top-shadow-color),
-      var(--chip-bottom-shadow-color)
-    );
-  }
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--chip-top-shadow-color),
+    var(--chip-bottom-shadow-color)
+  );
 }

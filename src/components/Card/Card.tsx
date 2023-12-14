@@ -2,7 +2,7 @@ import React from "react";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { CardProps } from "../../pillow.types";
-import "./Card.scss";
+import s from "./Card.module.scss";
 
 const Card = ({
   heading,
@@ -25,13 +25,15 @@ const Card = ({
         ["--card-top-shadow-color" as string]: `${topShadowColor}`,
         ["--card-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-card pillow-card--${variant} pillow-card--${textAlign}`}
+      className={`${s.card} ${variant === "flat" ? s.flat : s.pressed} ${
+        textAlign === "left" && s.left
+      }${textAlign === "center" && s.center}${
+        textAlign === "right" && s.right
+      }`}
     >
-      {imageSrc && (
-        <img className="pillow-card__image" src={imageSrc} alt={imageAlt} />
-      )}
-      <h2 className="pillow-card__heading">{heading}</h2>
-      <p className="pillow-card__text">{text}</p>
+      {imageSrc && <img className={s.image} src={imageSrc} alt={imageAlt} />}
+      <h2 className={s.heading}>{heading}</h2>
+      <p className={s.text}>{text}</p>
     </div>
   );
 };

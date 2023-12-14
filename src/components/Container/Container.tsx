@@ -2,7 +2,7 @@ import React from "react";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { ContainerProps } from "../../pillow.types";
-import "./Container.scss";
+import s from "./Container.module.scss";
 
 const Container = ({
   children,
@@ -23,8 +23,10 @@ const Container = ({
         ["--container-top-shadow-color" as string]: `${topShadowColor}`,
         ["--container-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-container pillow-container--${variant} pillow-container--${direction} ${
-        fullWidth ? "pillow-container--full-width" : ""
+      className={`${s.container} ${variant === "flat" ? s.flat : s.pressed} ${
+        direction === "row" ? s.row : s.column
+      }
+        ${fullWidth && s.full}
       }`}
     >
       {children}

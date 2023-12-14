@@ -2,7 +2,7 @@ import React from "react";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { SwitchProps } from "../../pillow.types";
-import "./Switch.scss";
+import s from "./Switch.module.scss";
 
 const Switch = ({
   checked,
@@ -22,16 +22,21 @@ const Switch = ({
     ["--switch-bottom-shadow-color" as string]: `${bottomShadowColor}`,
   };
   return (
-    <label style={style} className={`pillow-switch pillow-switch--${variant}`}>
+    <label
+      style={style}
+      className={`${s.switch} ${variant === "flat" ? s.flat : s.pressed} ${
+        disabled ? s.disabled : null
+      }`}
+    >
       <input
         type="checkbox"
         checked={checked}
         disabled={disabled}
         required={required}
         onChange={() => onChange}
-        className="pillow-switch__input"
+        className={s.input}
       />
-      <span className="switch" />
+      <span className={s.inner} />
     </label>
   );
 };

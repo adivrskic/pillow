@@ -2,7 +2,7 @@ import React from "react";
 import { getColor } from "../../helpers";
 import { luminosity } from "../../constants";
 import { ListProps } from "../../pillow.types";
-import "./List.scss";
+import s from "./List.module.scss";
 
 const List = ({
   header,
@@ -23,10 +23,10 @@ const List = ({
         ["--list-item-top-shadow-color" as string]: `${topShadowColor}`,
         ["--list-item-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`pillow-list pillow-list--${variant}`}
+      className={`${s.list} ${variant === "flat" ? s.flat : s.pressed}`}
     >
-      <h2 className="pillow-list__header">{header}</h2>
-      <p className="pillow-list__label">{label}</p>
+      <h2 className={s.header}>{header}</h2>
+      <p className={s.label}>{label}</p>
       <ul
         style={{
           ["--list-item-bg-color" as string]: `${bgColor}`,
@@ -34,10 +34,10 @@ const List = ({
           ["--list-item-top-shadow-color" as string]: `${topShadowColor}`,
           ["--list-item-bottom-shadow-color" as string]: `${bottomShadowColor}`,
         }}
-        className={`pillow-list__list pillow-list__list--${variant}`}
+        className={`${s.ul} ${variant === "flat" ? s.flat : s.pressed}`}
       >
         {listItems.map((item, index) => (
-          <li key={index} className="pillow-list__list-item">
+          <li key={index} className={s.li}>
             {item}
           </li>
         ))}

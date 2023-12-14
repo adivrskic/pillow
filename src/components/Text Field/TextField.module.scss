@@ -1,0 +1,54 @@
+@import "../../global.scss";
+
+.textfield {
+  display: inline-flex;
+  flex-direction: column;
+  border-radius: $border-radius;
+  padding: $padding-regular;
+  width: fit-content;
+}
+
+.flat {
+  @include box-shadow(
+    "",
+    var(--textfield-top-shadow-color),
+    var(--textfield-bottom-shadow-color)
+  );
+}
+
+.pressed {
+  @include box-shadow(
+    "inset",
+    var(--textfield-top-shadow-color),
+    var(--textfield-bottom-shadow-color)
+  );
+}
+
+.title {
+  font-size: $font-size-large;
+  margin: 0 0 $padding-regular 0;
+}
+
+.textarea {
+  background: var(--textfield-bg-color);
+  padding: $padding-regular;
+  min-width: 200px;
+  border-radius: $border-radius;
+  font-size: $font-size-regular;
+}
+
+.textfield .textarea.flat {
+  @include box-shadow(
+    "inset",
+    var(--textfield-top-shadow-color),
+    var(--textfield-bottom-shadow-color)
+  );
+}
+
+.textfield .textarea.pressed {
+  @include box-shadow(
+    "",
+    var(--textfield-top-shadow-color),
+    var(--textfield-bottom-shadow-color)
+  );
+}
