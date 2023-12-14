@@ -42,6 +42,11 @@
   align-items: flex-start;
 }
 
+.inline {
+  flex-direction: row;
+  align-items: baseline;
+}
+
 .close {
   position: absolute;
   top: 50%;
@@ -57,6 +62,10 @@
 .heading {
   font-size: $font-size-regular;
   color: var(--alert-text-color);
+}
+
+.inline .heading {
+  margin-right: $padding-small;
 }
 
 .label {

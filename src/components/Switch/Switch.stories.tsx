@@ -14,11 +14,11 @@ const Template: ComponentStory<typeof Switch> = (args) => <Switch {...args} />;
 export const SwitchComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 SwitchComponent.args = {
+  bgColor: "#E4EBF5",
   checked: true,
   disabled: false,
-  required: true,
   onChange: () => console.log("Changed"),
-  variant: "flat",
-  bgColor: "#E4EBF5",
+  required: true,
   textColor: "#6D5DFC",
+  variant: "flat",
 };

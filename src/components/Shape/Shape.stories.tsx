@@ -14,10 +14,10 @@ const Template: ComponentStory<typeof Shape> = (args) => <Shape {...args} />;
 export const ShapeComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ShapeComponent.args = {
-  width: 300,
+  animate: true,
+  bgColor: "#E4EBF5",
   height: 300,
   round: true,
   variant: "flat",
-  animate: true,
-  bgColor: "#E4EBF5",
+  width: 300,
 };

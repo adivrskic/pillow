@@ -5,12 +5,12 @@ import { TextFieldProps } from "../../pillow.types";
 import s from "./TextField.module.scss";
 
 const TextField = ({
-  title,
+  bgColor,
   content,
   onTextChange,
-  variant,
-  bgColor,
   textColor,
+  title,
+  variant,
 }: TextFieldProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);

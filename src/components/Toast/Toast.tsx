@@ -6,12 +6,12 @@ import { ToastProps } from "../../pillow.types";
 import s from "./Toast.module.scss";
 
 const Toast = ({
-  title,
+  bgColor,
   duration,
   onClose,
-  variant,
-  bgColor,
   textColor,
+  title,
+  variant,
 }: ToastProps) => {
   let active = true;
   const topShadowColor = getColor(bgColor, -luminosity);

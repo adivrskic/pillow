@@ -14,10 +14,10 @@ const Template: ComponentStory<typeof List> = (args) => <List {...args} />;
 export const ListComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ListComponent.args = {
+  bgColor: "#E4EBF5",
   header: "List",
   label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   listItems: [<p>List item 1</p>, <p>List item 2</p>, <p>List item 3</p>],
-  variant: "flat",
-  bgColor: "#E4EBF5",
   textColor: "#6D5DFC",
+  variant: "flat",
 };

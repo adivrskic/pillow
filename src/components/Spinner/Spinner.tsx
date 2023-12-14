@@ -4,7 +4,7 @@ import { luminosity } from "../../constants";
 import { SpinnerProps } from "../../pillow.types";
 import s from "./Spinner.module.scss";
 
-const Spinner = ({ complete, spinColor, variant, bgColor }: SpinnerProps) => {
+const Spinner = ({ bgColor, complete, spinColor, variant }: SpinnerProps) => {
   if (complete) return null;
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);

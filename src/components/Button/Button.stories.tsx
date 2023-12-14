@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Button from "./Button";
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -14,13 +15,13 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const ButtonComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ButtonComponent.args = {
-  label: "Click Me",
-  variant: "flat",
-  size: "small",
-  icon: null,
-  role: "button",
-  href: "",
-  disabled: false,
   bgColor: "#E4EBF5",
+  disabled: false,
+  href: "",
+  icon: <IoCheckmarkCircleOutline />,
+  label: "Click Me",
+  role: "button",
+  size: "small",
   textColor: "#6D5DFC",
+  variant: "flat",
 };

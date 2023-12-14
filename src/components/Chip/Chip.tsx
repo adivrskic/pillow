@@ -4,7 +4,7 @@ import { luminosity } from "../../constants";
 import { ChipProps } from "../../pillow.types";
 import s from "./Chip.module.scss";
 
-const Chip = ({ label, variant, bgColor, textColor }: ChipProps) => {
+const Chip = ({ bgColor, label, textColor, variant }: ChipProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
 

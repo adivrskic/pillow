@@ -5,12 +5,12 @@ import { ListProps } from "../../pillow.types";
 import s from "./List.module.scss";
 
 const List = ({
+  bgColor,
   header,
   label,
   listItems,
-  variant,
-  bgColor,
   textColor,
+  variant,
 }: ListProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);

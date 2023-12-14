@@ -16,10 +16,10 @@ const Template: ComponentStory<typeof TextField> = (args) => (
 export const TextFieldComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 TextFieldComponent.args = {
-  title: "Text Field Example",
+  bgColor: "#E4EBF5",
   content: "",
   onTextChange: () => console.log("change"),
-  variant: "flat",
-  bgColor: "#E4EBF5",
   textColor: "#6D5DFC",
+  title: "Text Field Example",
+  variant: "flat",
 };

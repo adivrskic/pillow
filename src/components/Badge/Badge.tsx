@@ -4,7 +4,7 @@ import { getColor } from "../../helpers";
 import { BadgeProps } from "../../pillow.types";
 import s from "./Badge.module.scss";
 
-const Badge = ({ label, variant, bgColor, textColor }: BadgeProps) => {
+const Badge = ({ bgColor, label, textColor, variant }: BadgeProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
 

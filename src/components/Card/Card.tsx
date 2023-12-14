@@ -5,14 +5,14 @@ import { CardProps } from "../../pillow.types";
 import s from "./Card.module.scss";
 
 const Card = ({
+  bgColor,
   heading,
   imageAlt,
   imageSrc,
   text,
   textAlign,
-  variant,
-  bgColor,
   textColor,
+  variant,
 }: CardProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
@@ -27,7 +27,7 @@ const Card = ({
       }}
       className={`${s.card} ${variant === "flat" ? s.flat : s.pressed} ${
         textAlign === "left" && s.left
-      }${textAlign === "center" && s.center}${
+      } ${textAlign === "center" && s.center} ${
         textAlign === "right" && s.right
       }`}
     >

@@ -11,13 +11,14 @@ import { AlertProps } from "../../pillow.types";
 import s from "./Alert.module.scss";
 
 const Alert = ({
-  heading,
-  label,
-  severity,
-  variant,
-  onClose,
   bgColor,
+  heading,
+  inline,
+  label,
+  onClose,
+  severity,
   textColor,
+  variant,
 }: AlertProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
@@ -43,7 +44,7 @@ const Alert = ({
         ["--alert-top-shadow-color" as string]: `${topShadowColor}`,
         ["--alert-bottom-shadow-color" as string]: `${bottomShadowColor}`,
       }}
-      className={`${s.alert} ${variant === "flat" ? s.flat : s.pressed}`}
+      className={`${s.alert} ${variant === "flat" ? s.flat : s.pressed} `}
     >
       {alertIcon && alertIcon}
       {onClose && (
@@ -52,7 +53,7 @@ const Alert = ({
           onClick={() => onClose()}
         />
       )}
-      <div className={s.content}>
+      <div className={`${s.content} ${inline ? s.inline : null}`}>
         <h4 className={s.heading}>{heading}</h4>
         <p className={s.label}>{label}</p>
       </div>

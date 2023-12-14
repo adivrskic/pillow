@@ -5,13 +5,13 @@ import { ContainerProps } from "../../pillow.types";
 import s from "./Container.module.scss";
 
 const Container = ({
+  align,
+  bgColor,
   children,
   direction,
   fullWidth,
-  align,
-  variant,
-  bgColor,
   textColor,
+  variant,
 }: ContainerProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
@@ -26,7 +26,7 @@ const Container = ({
       }}
       className={`${s.container} ${variant === "flat" ? s.flat : null} ${
         variant === "pressed" ? s.pressed : null
-      }${direction === "row" ? s.row : s.column}
+      } ${direction === "row" ? s.row : s.column}
         ${fullWidth && s.full}
         ${align === "left" && s.left}
         ${align === "center" && s.center}

@@ -5,12 +5,12 @@ import { ShapeProps } from "../../pillow.types";
 import s from "./Shape.module.scss";
 
 const Shape = ({
-  width,
+  animate,
+  bgColor,
   height,
   round,
-  animate,
   variant,
-  bgColor,
+  width,
 }: ShapeProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);

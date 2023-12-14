@@ -11,11 +11,12 @@ const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args} />;
 
 export const AlertComponent = Template.bind({});
 AlertComponent.args = {
+  bgColor: "#E4EBF5",
   heading: "Success",
   label: "This is an example of a success alert",
-  variant: "flat",
-  severity: "success",
+  inline: false,
   onClose: () => console.log("Closing"),
-  bgColor: "#E4EBF5",
+  severity: "success",
   textColor: "#6D5DFC",
+  variant: "flat",
 };

@@ -1,23 +1,25 @@
 import React from "react";
 
 export interface AlertProps {
-  heading: string;
-  label: string;
-  severity: string;
-  variant: string;
-  onClose: () => void;
   bgColor: string;
+  heading: string;
+  inline: boolean;
+  label: string;
+  onClose: () => void;
+  severity: string;
   textColor: string;
+  variant: string;
 }
 
 export interface BadgeProps {
-  label: string | number;
-  variant: string;
   bgColor: string;
+  label: string | number;
   textColor: string;
+  variant: string;
 }
 
 export interface ButtonProps {
+  bgColor: string;
   disabled: boolean;
   href: string;
   icon: React.ReactNode;
@@ -25,97 +27,96 @@ export interface ButtonProps {
   onClick: () => void;
   role: string;
   size: string;
-  variant: string;
-  bgColor: string;
   textColor: string;
+  variant: string;
 }
 
 export interface CardProps {
+  bgColor: string;
   heading: string;
   imageAlt: string;
   imageSrc: string;
   text: string;
   textAlign: string;
-  variant: string;
-  bgColor: string;
   textColor: string;
+  variant: string;
 }
 
 export interface ChipProps {
+  bgColor: string;
   icon: string;
   label: string;
-  variant: string;
-  bgColor: string;
   textColor: string;
+  variant: string;
 }
 
 export interface ContainerProps {
+  align: string;
+  bgColor: string;
   children: React.ReactNode;
   direction: string;
   fullWidth: boolean;
-  align: string;
-  variant: string;
-  bgColor: string;
   textColor: string;
+  variant: string;
 }
 
 export interface IconButtonProps {
-  icon: React.ReactNode;
-  variant: string;
-  size: string;
   bgColor: string;
+  icon: React.ReactNode;
+  size: string;
   textColor: string;
+  variant: string;
 }
 
 export interface ListProps {
+  bgColor: string;
   header: string;
   label: string;
   listItems: React.ReactNode[];
-  variant: string;
-  bgColor: string;
   textColor: string;
+  variant: string;
 }
 
 export interface ShapeProps {
-  width: number;
+  animate: boolean;
+  bgColor: string;
   height: number;
   round: boolean;
-  animate: boolean;
   variant: string;
-  bgColor: string;
+  width: number;
 }
 
 export interface SpinnerProps {
-  complete: boolean;
-  variant: string;
-  spinColor: string;
   bgColor: string;
+  complete: boolean;
+  spinColor: string;
+  variant: string;
 }
 
 export interface SwitchProps {
+  bgColor: string;
   checked: boolean;
   disabled: boolean;
-  required: boolean;
   onChange: () => void;
-  variant: string;
-  bgColor: string;
+  required: boolean;
   textColor: string;
+  variant: string;
 }
 
 export interface TextFieldProps {
-  title: string;
+  bgColor: string;
   content: string;
   onTextChange: () => void;
-  variant: string;
-  bgColor: string;
   textColor: string;
+  title: string;
+  variant: string;
 }
 
 export interface ToastProps {
-  title: string;
+  bgColor: string;
   duration: number;
   onClose: () => void;
-  variant: string;
-  bgColor: string;
   textColor: string;
+  title: string;
+  variant: string;
 }

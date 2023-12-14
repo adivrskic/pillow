@@ -16,8 +16,8 @@ const Template: ComponentStory<typeof Spinner> = (args) => (
 export const SpinnerComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 SpinnerComponent.args = {
-  complete: false,
-  variant: "flat",
-  spinColor: "#6D5DFC",
   bgColor: "#E4EBF5",
+  complete: false,
+  spinColor: "#6D5DFC",
+  variant: "flat",
 };

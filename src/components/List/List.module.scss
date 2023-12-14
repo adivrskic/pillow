@@ -63,6 +63,9 @@
 
 .li {
   padding: $padding-regular;
+}
+
+.li * {
   color: var(--list-item-text-color);
 }
 

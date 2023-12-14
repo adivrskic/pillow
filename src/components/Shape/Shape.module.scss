@@ -1,8 +1,8 @@
 @import "../../global.scss";
 
 .shape {
-  height: var(--shape-height);
-  width: var(--shape-width);
+  min-height: var(--shape-height);
+  min-width: var(--shape-width);
   background-color: var(--shape-bg-color);
 }
 

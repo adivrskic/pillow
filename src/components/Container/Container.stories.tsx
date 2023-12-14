@@ -16,6 +16,8 @@ const Template: ComponentStory<typeof Container> = (args) => (
 export const ContainerComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ContainerComponent.args = {
+  align: "left",
+  bgColor: "#E4EBF5",
   children: (
     <>
       <p>Hello</p>
@@ -24,8 +26,6 @@ ContainerComponent.args = {
   ),
   direction: "column",
   fullWidth: false,
-  align: "left",
-  variant: "flat",
-  bgColor: "#E4EBF5",
   textColor: "#6D5DFC",
+  variant: "flat",
 };

@@ -5,13 +5,13 @@ import { SwitchProps } from "../../pillow.types";
 import s from "./Switch.module.scss";
 
 const Switch = ({
+  bgColor,
   checked,
   disabled,
-  required,
   onChange,
-  variant,
-  bgColor,
+  required,
   textColor,
+  variant,
 }: SwitchProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);

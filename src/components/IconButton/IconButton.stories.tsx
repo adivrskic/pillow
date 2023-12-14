@@ -16,9 +16,9 @@ const Template: ComponentStory<typeof IconButton> = (args) => (
 export const IconButtonComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 IconButtonComponent.args = {
-  icon: <IoCheckmarkCircleOutline />,
-  variant: "flat",
-  size: "medium",
   bgColor: "#E4EBF5",
+  icon: <IoCheckmarkCircleOutline />,
+  size: "medium",
   textColor: "#6D5DFC",
+  variant: "flat",
 };

@@ -14,11 +14,12 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 export const CardComponent = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 CardComponent.args = {
+  bgColor: "#E4EBF5",
   heading: "Example",
   imageAlt: "Example image",
   imageSrc: "",
   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  variant: "flat",
-  bgColor: "#E4EBF5",
+  textAlign: "center",
   textColor: "#6D5DFC",
+  variant: "flat",
 };

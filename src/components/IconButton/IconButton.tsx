@@ -5,11 +5,11 @@ import { IconButtonProps } from "../../pillow.types";
 import s from "./IconButton.module.scss";
 
 const IconButton = ({
-  icon,
-  variant,
-  size,
   bgColor,
+  icon,
+  size,
   textColor,
+  variant,
 }: IconButtonProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);

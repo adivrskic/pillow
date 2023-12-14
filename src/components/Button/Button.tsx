@@ -5,6 +5,7 @@ import { ButtonProps } from "../../pillow.types";
 import s from "./Button.module.scss";
 
 const Button = ({
+  bgColor,
   disabled,
   href,
   icon,
@@ -12,15 +13,17 @@ const Button = ({
   onClick,
   role,
   size,
-  variant,
-  bgColor,
   textColor,
+  variant,
 }: ButtonProps) => {
   const topShadowColor = getColor(bgColor, -luminosity);
   const bottomShadowColor = getColor(bgColor, luminosity);
 
   return href ? (
     <a
+      style={{
+        ["--btn-text-color" as string]: `${textColor}`,
+      }}
       role={role}
       className={`${s.btn} ${variant === "flat" ? s.flat : s.pressed} ${
         disabled && s.disabled

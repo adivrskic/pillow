@@ -18,10 +18,10 @@
   filter: brightness(1.03);
 }
 
-.icon {
+.btn svg {
   min-width: $icon-size-regular;
   min-height: $icon-size-regular;
-  padding: 0 $padding-regular 0 0;
+  padding: 0 $padding-small 0 0;
 }
 
 .disabled {
@@ -34,7 +34,7 @@
   padding: $padding-small;
 }
 
-.small .icon {
+.small svg {
   min-width: $icon-size-small;
   min-height: $icon-size-small;
 }
@@ -44,7 +44,7 @@
   padding: $padding-regular;
 }
 
-.medium .icon {
+.medium svg {
   min-width: $icon-size-regular;
   min-height: $icon-size-regular;
 }
@@ -54,7 +54,7 @@
   padding: $padding-large;
 }
 
-.large .icon {
+.large svg {
   min-width: $icon-size-large;
   min-height: $icon-size-large;
 }
