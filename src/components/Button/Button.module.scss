@@ -11,12 +11,13 @@
   text-align: center;
   width: fit-content;
   transition: $transition-fast;
+  border: 1px solid transparent;
 }
 
-.btn:not(.disabled):hover,
-.btn:not(.disabled):active {
-  filter: brightness(1.03);
-}
+// .btn:not(.disabled):hover,
+// .btn:not(.disabled):active {
+//   filter: brightness(1.01);
+// }
 
 .btn svg {
   min-width: $icon-size-regular;

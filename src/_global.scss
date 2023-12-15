@@ -17,7 +17,7 @@ $font-size-small: 0.8rem;
 $font-size-regular: 1rem;
 $font-size-large: 1.2rem;
 
-$transition-fast: all 0.1s ease-in-out;
+$transition-fast: all 0.05s ease-in-out;
 $transition-regular: all 0.2s ease-in-out;
 
 // Box Shadows
@@ -27,15 +27,15 @@ $transition-regular: all 0.2s ease-in-out;
       inset -8px -8px 18px $bottom-shadow-color;
     -moz-box-shadow: inset 8px 8px 18px $top-shadow-color,
       inset -8px -8px 18px $bottom-shadow-color;
-    box-shadow: inset 8px 8px 18px $top-shadow-color,
-      inset -8px -8px 18px $bottom-shadow-color;
+    box-shadow: inset 6px 6px 16px $top-shadow-color,
+      inset -6px -6px 16px $bottom-shadow-color;
   } @else {
     -webkit-box-shadow: 2px 4px 10px $top-shadow-color,
       -4px -8px 10px $bottom-shadow-color;
     -moz-box-shadow: 2px 4px 10px $top-shadow-color,
       -4px -8px 10px $bottom-shadow-color;
-    box-shadow: 2px 4px 10px $top-shadow-color,
-      -4px -8px 10px $bottom-shadow-color;
+    box-shadow: 6px 6px 16px $top-shadow-color,
+      -6px -6px 16px $bottom-shadow-color;
   }
 }
 
